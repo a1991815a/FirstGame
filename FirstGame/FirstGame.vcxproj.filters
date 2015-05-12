@@ -34,6 +34,15 @@
     <Filter Include="模型\状态机模型">
       <UniqueIdentifier>{27aaa931-f496-40c4-a16d-68c76e9b17c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="内存管理">
+      <UniqueIdentifier>{ab2d87b9-8b9b-422a-9359-005fe31df0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="主模块">
+      <UniqueIdentifier>{cc983cc2-4164-494a-9e72-60dce0f595dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工具类">
+      <UniqueIdentifier>{d67b8cbe-1bbd-4187-8810-c127a04ac3c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -46,9 +55,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DataUtils.h">
-      <Filter>通用模块\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Director.h">
       <Filter>通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="DispathMessage.h">
@@ -84,11 +90,32 @@
     <ClInclude Include="header.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>模型\头文件</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryManager.h">
+      <Filter>内存管理</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool.h">
+      <Filter>内存管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Ref.h">
+      <Filter>内存管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Director.h">
+      <Filter>主模块</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>模型</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomUtils.h">
+      <Filter>工具类</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderEngine.h">
       <Filter>通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplePhysicsEngine.h">
+      <Filter>通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Value.h">
+      <Filter>模型\头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +129,6 @@
       <Filter>通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="DataUtils.cpp">
-      <Filter>通用模块\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Director.cpp">
       <Filter>通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="DispathMessage.cpp">
@@ -134,11 +158,32 @@
     <ClCompile Include="LimitedState.cpp">
       <Filter>模型\状态机模型</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>模型\源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MemoryManager.cpp">
+      <Filter>内存管理</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryPool.cpp">
+      <Filter>内存管理</Filter>
+    </ClCompile>
+    <ClCompile Include="Ref.cpp">
+      <Filter>内存管理</Filter>
+    </ClCompile>
+    <ClCompile Include="Director.cpp">
+      <Filter>主模块</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>模型</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomUtils.cpp">
+      <Filter>工具类</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderEngine.cpp">
       <Filter>通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimplePhysicsEngine.cpp">
+      <Filter>通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Value.cpp">
+      <Filter>模型\源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -27,6 +27,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -40,6 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(WindowsSdkDir)include;D:\Program Files\Microsoft DirectX SDK (November 2007)\Include;$(VCInstallDir)PlatformSDK\include;$(VCInstallDir)PlatformSDK\common\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(WindowsSdkDir)lib;D:\Program Files\Microsoft DirectX SDK (November 2007)\Lib\x86;$(VCInstallDir)PlatformSDK\lib;$(VCInstallDir)PlatformSDK\common\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -48,7 +51,7 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -78,6 +81,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomUtils.h" />
     <ClInclude Include="DataUtils.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="DispathMessage.h" />
@@ -88,15 +92,21 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="MemoryManager.h" />
+    <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="Message.h" />
-    <ClInclude Include="Object.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Ref.h" />
+    <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SimplePhysicsEngine.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Value.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CustomUtils.cpp" />
     <ClCompile Include="DataUtils.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="DispathMessage.cpp" />
@@ -107,12 +117,17 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="MemoryManager.cpp" />
+    <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="Message.cpp" />
-    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Ref.cpp" />
+    <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SimplePhysicsEngine.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Value.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

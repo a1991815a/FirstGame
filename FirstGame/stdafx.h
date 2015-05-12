@@ -7,6 +7,8 @@
 #include <tchar.h>
 #include "header.h"
 #include <string>
+#include <vector>
+#include <map>
 using namespace std;
 
 #endif

@@ -2,6 +2,8 @@
 #define __MAPMANAGER__
 #include "stdafx.h"
 
+//地图管理引擎
+
 #define _mapManager MapManager::getInstance()
 
 class MapManager{
