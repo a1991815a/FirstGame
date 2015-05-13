@@ -11,13 +11,15 @@ public:
 
 	virtual bool init();
 
+	virtual void visit(Vec2 vec);
+
 	inline char getTexture() const { return _texture; }
 	inline void setTexture(char val) { _texture = val; }
 
 private:
 	char _texture;		//Œ∆¿Ì
 
-private:
+protected:
 	Sprite();
 	virtual ~Sprite();
 };

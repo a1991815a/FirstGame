@@ -4,7 +4,7 @@
 #include "Message.h"
 
 //消息分发管理
-typedef bool (*msgFunc)(int,vec2,Ref*);
+typedef bool (*msgFunc)(Message msg);
 
 #define _dispathMessage DispathMessage::getInstance()
 

@@ -1,8 +1,9 @@
 #include "Ref.h"
+#include "MemoryManager.h"
 
 const void Ref::autorelease()
 {
-	referenceCount++;
+	_memoryManager->getCurrentPool()->push(this);
 }
 
 const void Ref::release()

@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -81,6 +81,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Control.h" />
     <ClInclude Include="CustomUtils.h" />
     <ClInclude Include="DataUtils.h" />
     <ClInclude Include="Director.h" />
@@ -95,6 +96,7 @@
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Ref.h" />
     <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="Scene.h" />
@@ -106,6 +108,7 @@
     <ClInclude Include="Value.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Control.cpp" />
     <ClCompile Include="CustomUtils.cpp" />
     <ClCompile Include="DataUtils.cpp" />
     <ClCompile Include="Director.cpp" />
@@ -120,6 +123,7 @@
     <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ref.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Scene.cpp" />
