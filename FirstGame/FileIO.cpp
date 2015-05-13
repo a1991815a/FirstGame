@@ -1,5 +1,6 @@
 #include "FileIO.h"
 #include "Map.h"
+#include <iostream>
 
 FileIO* FileIO::_instance = nullptr;
 
@@ -31,6 +32,7 @@ Map* FileIO::loadMapFromFile( string filename )
 	fclose(file);
 	Map* map = Map::create(width, height);
 	map->initData(map_data);
+	return map;
 }
 
 long FileIO::getFileSize( FILE*& file )
@@ -53,6 +55,14 @@ void FileIO::getHeaderFromFile( FILE*& file, int* width, int* height )
 	fread_s(header_height, 6, 1, 5, file);
 	*width = atoi(header_width);
 	*height = atoi(header_height);
+	
+	if (*width > MAX_WIDTH || *height > MAX_HEIGHT)
+	{
+		fclose(file);
+		throw "地图尺寸太大！无法加载！";
+	}
+
+	fseek(file,2,SEEK_CUR);
 }
 
 

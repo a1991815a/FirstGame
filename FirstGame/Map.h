@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "Node.h"
 #include "header.h"
+#include "Scene.h"
 
 //µØÍ¼Ä£ÐÍ
 
@@ -14,16 +15,20 @@ public:
 	virtual bool init();
 	virtual bool init(short width, short height);
 
-	void initData(char**& in_data);
+	void initData(char** in_data);
 	virtual ~Map();
 
 	inline short getWidth() const{ return width;};
 	inline short getHeight() const{return height;};
 
+	virtual void visit(Vec2 vec) override;
+
 private:
-	char** final_data;
 	char** map_data;
 	short width;
 	short height;
+
+	friend void Scene::assembleFragment();
+	friend int _tmain(int argc, _TCHAR* argv[]);
 };
 #endif

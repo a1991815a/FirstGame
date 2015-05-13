@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="头文件">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -13,35 +9,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="通用模块">
-      <UniqueIdentifier>{176de1d8-5584-46a0-b76b-0b3d51f82a7b}</UniqueIdentifier>
+    <Filter Include="游戏引擎">
+      <UniqueIdentifier>{55adc26d-9940-45f4-8d64-25568d13fcd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="通用模块\源文件">
-      <UniqueIdentifier>{9f30d3ea-efc9-4128-ab27-16d1d0d56c49}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="通用模块\头文件">
-      <UniqueIdentifier>{c8b88050-c9e2-4f6c-9484-2e0559d4bd8a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="模型">
-      <UniqueIdentifier>{4724d4d4-d2f6-4a87-9ebc-091b4efb386b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="模型\源文件">
-      <UniqueIdentifier>{4b6c9363-115f-4152-a770-2409adbfb010}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="模型\头文件">
-      <UniqueIdentifier>{ea8eaa42-e8fb-4c85-a2ed-cc3812d887c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="模型\状态机模型">
-      <UniqueIdentifier>{27aaa931-f496-40c4-a16d-68c76e9b17c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="内存管理">
-      <UniqueIdentifier>{ab2d87b9-8b9b-422a-9359-005fe31df0d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="主模块">
+    <Filter Include="游戏引擎\主模块">
       <UniqueIdentifier>{cc983cc2-4164-494a-9e72-60dce0f595dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="工具类">
+    <Filter Include="游戏引擎\内存管理">
+      <UniqueIdentifier>{ab2d87b9-8b9b-422a-9359-005fe31df0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\工具类">
       <UniqueIdentifier>{d67b8cbe-1bbd-4187-8810-c127a04ac3c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\模型">
+      <UniqueIdentifier>{4724d4d4-d2f6-4a87-9ebc-091b4efb386b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\模型\源文件">
+      <UniqueIdentifier>{4b6c9363-115f-4152-a770-2409adbfb010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\模型\头文件">
+      <UniqueIdentifier>{ea8eaa42-e8fb-4c85-a2ed-cc3812d887c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\模型\状态机模型">
+      <UniqueIdentifier>{27aaa931-f496-40c4-a16d-68c76e9b17c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="游戏引擎\通用模块">
+      <UniqueIdentifier>{176de1d8-5584-46a0-b76b-0b3d51f82a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\通用模块\源文件">
+      <UniqueIdentifier>{9f30d3ea-efc9-4128-ab27-16d1d0d56c49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\通用模块\头文件">
+      <UniqueIdentifier>{c8b88050-c9e2-4f6c-9484-2e0559d4bd8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏">
+      <UniqueIdentifier>{a087d907-2afb-45a1-965c-66855a13a33e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型">
+      <UniqueIdentifier>{3cb2cb37-05a7-4198-9284-d211a1f0de3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\头文件">
+      <UniqueIdentifier>{5ceb482f-15ec-4533-9b7c-af2a3bd933bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\源文件">
+      <UniqueIdentifier>{f100aceb-9899-40ee-b5b6-a5d9fcd11408}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,67 +70,73 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DataUtils.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="DispathMessage.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="FileIO.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="GameLimitState.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="MapManager.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="SpriteManager.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>模型\头文件</Filter>
+      <Filter>游戏引擎\模型\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>模型\头文件</Filter>
+      <Filter>游戏引擎\模型\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>模型\头文件</Filter>
+      <Filter>游戏引擎\模型\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Message.h">
-      <Filter>模型\头文件</Filter>
+      <Filter>游戏引擎\模型\头文件</Filter>
     </ClInclude>
     <ClInclude Include="LimitedState.h">
-      <Filter>模型\状态机模型</Filter>
-    </ClInclude>
-    <ClInclude Include="header.h">
-      <Filter>头文件</Filter>
+      <Filter>游戏引擎\模型\状态机模型</Filter>
     </ClInclude>
     <ClInclude Include="MemoryManager.h">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClInclude>
     <ClInclude Include="MemoryPool.h">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClInclude>
     <ClInclude Include="Ref.h">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClInclude>
     <ClInclude Include="Director.h">
-      <Filter>主模块</Filter>
+      <Filter>游戏引擎\主模块</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>模型</Filter>
+      <Filter>游戏引擎\模型</Filter>
     </ClInclude>
     <ClInclude Include="CustomUtils.h">
-      <Filter>工具类</Filter>
+      <Filter>游戏引擎\工具类</Filter>
     </ClInclude>
     <ClInclude Include="RenderEngine.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="SimplePhysicsEngine.h">
-      <Filter>通用模块\头文件</Filter>
+      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Value.h">
-      <Filter>模型\头文件</Filter>
+      <Filter>游戏引擎\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>游戏引擎\通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>游戏引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>游戏\模型\头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,64 +147,70 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MapManager.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="DataUtils.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="DispathMessage.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="FileIO.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="GameLimitState.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="SpriteManager.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>模型\源文件</Filter>
+      <Filter>游戏引擎\模型\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>模型\源文件</Filter>
+      <Filter>游戏引擎\模型\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>模型\源文件</Filter>
+      <Filter>游戏引擎\模型\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Message.cpp">
-      <Filter>模型\源文件</Filter>
+      <Filter>游戏引擎\模型\源文件</Filter>
     </ClCompile>
     <ClCompile Include="LimitedState.cpp">
-      <Filter>模型\状态机模型</Filter>
+      <Filter>游戏引擎\模型\状态机模型</Filter>
     </ClCompile>
     <ClCompile Include="MemoryManager.cpp">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClCompile>
     <ClCompile Include="MemoryPool.cpp">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClCompile>
     <ClCompile Include="Ref.cpp">
-      <Filter>内存管理</Filter>
+      <Filter>游戏引擎\内存管理</Filter>
     </ClCompile>
     <ClCompile Include="Director.cpp">
-      <Filter>主模块</Filter>
+      <Filter>游戏引擎\主模块</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>模型</Filter>
+      <Filter>游戏引擎\模型</Filter>
     </ClCompile>
     <ClCompile Include="CustomUtils.cpp">
-      <Filter>工具类</Filter>
+      <Filter>游戏引擎\工具类</Filter>
     </ClCompile>
     <ClCompile Include="RenderEngine.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="SimplePhysicsEngine.cpp">
-      <Filter>通用模块\源文件</Filter>
+      <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
     <ClCompile Include="Value.cpp">
-      <Filter>模型\源文件</Filter>
+      <Filter>游戏引擎\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.cpp">
+      <Filter>游戏引擎\通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>游戏\模型\源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

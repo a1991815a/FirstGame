@@ -12,5 +12,6 @@ public:
 	static GameLimitState* getInstance();
 private:
 	static GameLimitState* _instance;
+
 };
 #endif

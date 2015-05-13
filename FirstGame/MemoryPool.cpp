@@ -7,7 +7,6 @@ const void MemoryPool::clear()
 	for (int i = 0; i < ref_list.size(); i++)
 	{
 		Ref*& ref = ref_list.at(i);
-		ref->release();
 		if (ref->referenceCount <= 0)
 		{
 			SAFE_DELETE(ref);
@@ -15,6 +14,11 @@ const void MemoryPool::clear()
 			i--;
 		}
 	}
+}
+
+void MemoryPool::push(Ref* ref)
+{
+	ref_list.push_back(ref);
 }
 
 MemoryPool::~MemoryPool()

@@ -25,11 +25,11 @@ void DispathMessage::dispathMessage()
 {
 	for (int i=0; i < _messages.size(); i++)
 	{
-		Message& msg = _messages.at(i);
+		const Message& msg = _messages.at(i);
 		for (int j=0; j<_func.size(); j++)
 		{
-			msgFunc& func = _func.at(j);
-			if (func(msg.getMsg(),msg.getPos(),msg.getParam()))
+			const msgFunc& func = _func.at(j);
+			if (func(msg))
 			{
 				_messages.erase(_messages.begin()+i);
 				i--;

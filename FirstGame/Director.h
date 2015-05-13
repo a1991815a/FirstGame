@@ -18,9 +18,11 @@ private:
 public:
 	void mainloop();	//Ö÷Ñ­»·
 
+	void initAll();
+
 	void setScene(Scene* scene);
 
-
+	Scene* getCurrentScene() const;
 private:
 	Scene* CurrentScene;
 

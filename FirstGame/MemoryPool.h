@@ -11,6 +11,8 @@ public:
 
 	const void clear();
 
+	void push(Ref* ref);
+
 	~MemoryPool();
 private:
 	vector<Ref*> ref_list;

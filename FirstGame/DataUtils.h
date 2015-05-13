@@ -14,6 +14,6 @@ private:
 
 public:
 	void copyMatrix(char**& matrix_dst, char**& matrix_res, int width, int height);
-
+	
 };
 #endif
