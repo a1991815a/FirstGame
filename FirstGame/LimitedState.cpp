@@ -1,21 +1,11 @@
 #include "LimitedState.h"
 
-void LimitedState::RegisterFunc( int state, stateFunc func )
+LimitedState::LimitedState()
 {
-	_func_list[state] = func;
+	CurrentState = 0;
 }
 
 void LimitedState::transState( int state )
 {
 	CurrentState = state;
-}
-
-void LimitedState::excuteStateAct()
-{
-	stateFunc func = _func_list.at(CurrentState);
-	if (func == nullptr)
-	{
-		return;
-	}
-	func();
 }

@@ -9,7 +9,7 @@ Node::Node()
 	_tag = -1;
 	_parent = nullptr;
 	pos = Vec2();
-	dst_pos = Vec2();
+	before_pos = Vec2();
 }
 
 Node::~Node()

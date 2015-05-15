@@ -73,3 +73,32 @@ Vec2 CustomUtils::transRenderVec2( Node* node, Vec2 pos ) const
 	pos = transMapVec2(_director->getCurrentScene()->getMap(), pos);
 	return pos; 
 }
+
+Vec2 CustomUtils::getCameraPos(Map* map, int width, int height) const
+{
+	Vec2 pos = map->getPos();
+
+	if (pos.x > 0)
+	{
+		pos.x = 0;
+	}
+
+	if (pos.x < -(map->getWidth() - 1 - width))
+	{
+		pos.x = -(map->getWidth() - 1 - width);
+	}
+
+	if (pos.y > 0){
+		pos.y = 0;
+	}
+
+	if (pos.y < -(map->getHeight() - height)){
+		pos.y = -(map->getHeight() - height);
+	}
+
+	map->setPos(pos.x, pos.y);
+	
+	pos.x *= 2;
+
+	return pos;
+}

@@ -5,6 +5,8 @@
 #include <iostream>
 #include "FileIO.h"
 #include "Map.h"
+#include "Player.h"
+#include "TextOut.h"
 
 #define GameVersion 1.0
 
@@ -31,7 +33,14 @@ void GameMain(){
 	scene->addChild(map);
 
 	_director->setScene(scene);
+	Player* player = Player::create();
+	player->setTexture("壹");
+	player->setPos(1,13);
+	map->addChild(player, 5);
+	scene->setActor(player);
 
+	showSideText("开始游戏");
+	showSubText("结束游戏");
 }
 
 

@@ -23,6 +23,8 @@ public:
 	void setScene(Scene* scene);
 
 	Scene* getCurrentScene() const;
+
+	Player* getActor() const;
 private:
 	Scene* CurrentScene;
 

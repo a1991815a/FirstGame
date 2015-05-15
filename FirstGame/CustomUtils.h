@@ -28,6 +28,8 @@ public:
 	Vec2 transGlobalVec2(Node* node, Vec2 pos) const;
 
 	Vec2 transRenderVec2(Node* node, Vec2 pos) const;
+
+	Vec2 getCameraPos(Map* map, int width, int height) const;
 private:
 	long _time;
 	long before_time;

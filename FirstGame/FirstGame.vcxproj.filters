@@ -58,9 +58,25 @@
     <Filter Include="游戏\模型\源文件">
       <UniqueIdentifier>{f100aceb-9899-40ee-b5b6-a5d9fcd11408}</UniqueIdentifier>
     </Filter>
+    <Filter Include="游戏\建筑">
+      <UniqueIdentifier>{cc3c2579-a742-405d-a92d-d5cfc0dc4e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\系统">
+      <UniqueIdentifier>{1e31b521-68dc-48d8-a255-531024479a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\系统\战斗">
+      <UniqueIdentifier>{f8b37ebd-c320-4a62-b4c4-32ce1b54e520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\系统\任务">
+      <UniqueIdentifier>{1314bcdd-86d4-4ea0-aa23-bd40842c3734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\系统\事件">
+      <UniqueIdentifier>{9b04028b-5d27-410c-8d01-4184c81d730e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="map.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -132,11 +148,54 @@
     <ClInclude Include="Control.h">
       <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
-    <ClInclude Include="header.h">
-      <Filter>游戏引擎</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CALLBACK_1.h">
+      <Filter>游戏引擎\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TextOut.h">
+      <Filter>游戏引擎\通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FightSystem.h">
+      <Filter>游戏\系统\战斗</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskSystem.h">
+      <Filter>游戏\系统\任务</Filter>
+    </ClInclude>
+    <ClInclude Include="header.h" />
+    <ClInclude Include="NpcActor.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>游戏\模型\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSystem.h">
+      <Filter>游戏\系统\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>游戏\系统\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="OnOffSystem.h">
+      <Filter>游戏\系统</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCommand.h">
+      <Filter>游戏\系统\事件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +270,39 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>游戏\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CALLBACK_1.cpp">
+      <Filter>游戏引擎\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TextOut.cpp">
+      <Filter>游戏引擎\通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>游戏\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FightSystem.cpp">
+      <Filter>游戏\系统\战斗</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskSystem.cpp">
+      <Filter>游戏\系统\任务</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcActor.cpp">
+      <Filter>游戏\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>游戏\模型\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EventSystem.cpp">
+      <Filter>游戏\系统\事件</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>游戏\系统\事件</Filter>
+    </ClCompile>
+    <ClCompile Include="OnOffSystem.cpp">
+      <Filter>游戏\系统</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCommand.cpp">
+      <Filter>游戏\系统\事件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

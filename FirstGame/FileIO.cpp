@@ -49,10 +49,10 @@ void FileIO::getHeaderFromFile( FILE*& file, int* width, int* height )
 {
 	if(file == nullptr)
 		return;
-	char header_width[6];
-	char header_height[6];
-	fread_s(header_width, 6, 1, 5, file);
-	fread_s(header_height, 6, 1, 5, file);
+	char header_width[4];
+	char header_height[4];
+	fread_s(header_width, 4, 1, 3, file);
+	fread_s(header_height, 4, 1, 3, file);
 	*width = atoi(header_width);
 	*height = atoi(header_height);
 	

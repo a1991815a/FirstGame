@@ -24,8 +24,12 @@ void SimplePhysicsEngine::CollisionCheck()
 				continue;
 			Node*& body_2 = _rigidBodys.at(i);
 
-			if (body_1->getDstPos() == body_2->getPos())
+			if (body_1->getPos() == body_2->getPos())
 			{
+				if(body_1->getTag() == PLAYER_ACTOR)
+					body_1->resetPos();
+				if(body_2->getTag() == PLAYER_ACTOR)
+					body_2->resetPos();
 				_dispathMessage->sendMsg(
 					Message(MSG_COLLISION,
 					new collsitionModel(body_1, body_2)));
@@ -34,9 +38,20 @@ void SimplePhysicsEngine::CollisionCheck()
 	}
 }
 
-void SimplePhysicsEngine::setBody(Node* node)
+void SimplePhysicsEngine::setBody( Node* node, BodyType type )
 {
-	_rigidBodys.push_back(node);
+	switch(type){
+	case RigidBody:
+		_rigidBodys.push_back(node);
+		break;
+	case DownBody:
+		_downBodys.push_back(node);
+		break;
+	default:
+		break;
+	}
+	
+	
 }
 
 SimplePhysicsEngine::collsitionModel::collsitionModel(Node* n1, Node* n2)

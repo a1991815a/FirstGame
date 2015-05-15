@@ -7,6 +7,10 @@ class Node;
 
 #define _simplePhysicsEngine SimplePhysicsEngine::getInstance()
 
+enum BodyType{
+	RigidBody,DownBody
+};
+
 class SimplePhysicsEngine{
 public:
 	static SimplePhysicsEngine* getInstance();
@@ -16,7 +20,7 @@ private:
 public:
 	void CollisionCheck();
 
-	void setBody(Node* node);
+	void setBody(Node* node, BodyType type);
 
 	class collsitionModel: public Ref{
 	public:
@@ -26,5 +30,6 @@ public:
 	};
 private:
 	vector<Node*> _rigidBodys;
+	vector<Node*> _downBodys;
 };
 #endif

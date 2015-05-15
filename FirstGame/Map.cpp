@@ -1,6 +1,7 @@
 #include "Map.h"
 #include "DataUtils.h"
 #include "RenderEngine.h"
+#include "CustomUtils.h"
 
 Map::Map()
 	:Node()
@@ -12,12 +13,6 @@ bool Map::init( short width, short height )
 {
 	this->width = width;
 	this->height = height;
-// 
-// 	map_data = new char*[height];
-// 
-// 	for(int row=0; row<height; row++){
-// 		map_data[row] = new char*[width+1];
-// 	}
 
 	return true;
 }
@@ -54,11 +49,13 @@ Map::~Map()
 
 void Map::visit( Vec2 vec )
 {
-	for (int row=0; row<getHeight(); row++)
+	Vec2 pos = _customUtils->getCameraPos(this, CUT_WIDTH, CUT_HEIGHT);
+
+	for (int row = pos.y; row < pos.y + CUT_HEIGHT - 1; row++)
 	{
-		for (int col=0; col<getWidth(); col++)
+		for (int col = pos.x; col < pos.x + CUT_WIDTH - 1; col++)
 		{
-			_renderEngine->addRenderData(map_data[row][col], Vec2(col, row));
+			_renderEngine->addRenderData(map_data[row][col], Vec2(pos.x + col, pos.y + row));
 		}
 	}
 }

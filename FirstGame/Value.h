@@ -41,6 +41,7 @@ private:
 		_type = None;
 	};
 	
+public:
 	inline ValueType getType() const{return _type;};
 	inline bool isInt() const{if(_type == Int) return true;return false;};
 	inline bool isFloat() const{if(_type == Float) return true;return false;};
@@ -48,10 +49,10 @@ private:
 	inline bool isNone() const{if(_type == None) return true;return false;};
 	inline bool isChar() const { if (_type == Char) return true; return false; };
 
-	inline int asInt() const{ if (!isInt()) return 0; return _value._int; };
-	inline float asFloat() const{ if (!isFloat()) return 0; return _value._float; };
-	inline const char* asCharArray() const{ if (!isCharArray()) return nullptr; return _value._string; };
-	inline char asChar() const{ if (!isChar()) return '\0'; return _value._char; };
+	inline int asInt() const{ return _value._int; };
+	inline float asFloat() const{ return _value._float; };
+	inline const char* asCharArray() const{return _value._string; };
+	inline char asChar() const{return _value._char; };
 
 };
 #endif

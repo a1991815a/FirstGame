@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Director.h"
 #include "CustomUtils.h"
+#include <stdarg.h>
 
 RenderEngine* RenderEngine::_instance = nullptr;
 
@@ -30,8 +31,11 @@ void RenderEngine::RenderAll()
 	{	
 		if(display_data[row][0] == -51 || display_data[row][0] == 0)
 			continue;
-		cout << display_data[row] << endl;
+		cout << display_data[row];
+		renderSideText(row);
+		cout << endl;
 	}
+	renderSubText();
 }
 
 void RenderEngine::readyBuf()
@@ -92,4 +96,55 @@ void RenderEngine::cutBuf()
 		}
 	}
 
+}
+
+void RenderEngine::setSubText( string format, ... )
+{
+	va_list ap;
+	va_start(ap,format);
+	char out_text[1024];
+	vsprintf_s(out_text, 1024, format.c_str(), ap);
+	va_end(ap);
+	sub_text += out_text;
+}
+
+
+void RenderEngine::setSideText( string format, ... )
+{
+	va_list ap;
+	va_start(ap,format);
+	char out_text[1024];
+	vsprintf_s(out_text, 1024, format.c_str(), ap);
+	va_end(ap);
+	side_text += out_text;
+}
+
+void RenderEngine::renderSubText()
+{
+	int i = 0;
+	while(true)
+	{
+		const int offset = i*SUB_TEXT_SIZE_WIDTH;
+		char show_text[SUB_TEXT_SIZE_WIDTH + 1]={0};
+		if(offset >= sub_text.size())
+			break;
+		sub_text.copy(show_text,SUB_TEXT_SIZE_WIDTH,offset);
+		if(show_text[0] == '\0')
+			break;
+		cout << show_text << endl;
+		i++;
+	}
+
+}
+
+void RenderEngine::renderSideText(int row)
+{
+	const int max_row = std::ceil((float)((float)side_text.size() / (float)SIDE_TEXT_SIZE_WIDTH));
+	if (row >= max_row)
+	{
+		return;
+	}
+	char show_text[SIDE_TEXT_SIZE_WIDTH + 1] = {0};
+	side_text.copy(show_text,SIDE_TEXT_SIZE_WIDTH, row * SIDE_TEXT_SIZE_WIDTH);
+	cout << "¡¡¡¡*" << show_text;
 }

@@ -13,5 +13,9 @@ public:
 private:
 	static GameLimitState* _instance;
 
+public:
+	void excuteStateAct();
+
+	void stateControl(int state, int what);
 };
 #endif

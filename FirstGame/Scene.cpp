@@ -20,6 +20,7 @@ Scene::~Scene()
 
 void Scene::addChild(Map* map)
 {
+	Node::addChild(map, 0);
 	_map = map;
 	_map->retain();
 }
@@ -45,5 +46,4 @@ Map* Scene::getMap() const
 
 void Scene::visit( Vec2 vec )
 {
-	_map->visit(Vec2());
 }

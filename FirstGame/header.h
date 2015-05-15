@@ -5,6 +5,14 @@
 
 class Node;
 
+struct OnOff{
+public:
+	OnOff(){
+		A=B=C=D=true;
+	}
+	bool A,B,C,D;
+};
+
 struct Vec2
 {
 public:
@@ -53,41 +61,89 @@ public:
 	Vec2 renderPos;
 };
 
+enum MoveObj{
+	MoveUp,MoveDown,MoveLeft,MoveRight
+};
+
 //宏
-#define MAX_HEIGHT		50
-#define MAX_WIDTH		60
+#define MAX_HEIGHT					50		//地图大小限制
+#define MAX_WIDTH					100
 
-#define CUT_HEIGHT		10
-#define CUT_WIDTH		20
+#define CUT_HEIGHT					18		//裁剪宏
+#define CUT_WIDTH					48
 
-#define MIN_Z			-9
-#define MAX_Z			9
+#define SUB_TEXT_POS_X				0		//底部文本显示初始位置
+#define SUB_TEXT_POS_Y				19
+#define SUB_TEXT_SIZE_WIDTH			58		//底部文本尺寸
+#define SUB_TEXT_SIZE_HEIGHT		5		
+
+#define SIDE_TEXT_POS_X				53		//侧面文本起始位置
+#define SIDE_TEXT_POS_Y				0
+#define SIDE_TEXT_SIZE_WIDTH		30		//侧面文本尺寸
+#define SIDE_TEXT_SIZE_HEIGHT		5		
+#define SIDE_TEXT_POS_END_X			SIDE_TEXT_POS_X+SIDE_TEXT_SIZE_WIDTH
+#define SIDE_TEXT_POS_END_Y			SIDE_TEXT_POS_Y+SIDE_TEXT_SIZE_HEIGHT
+
+#define MIN_Z						-9		//Z坐标区间
+#define MAX_Z						9
 
 //宏操作
+	//安全释放
 #define SAFE_DELETE(A)  do {if(A != nullptr) delete A; A = nullptr;} while (0);
 
+/***********************************************/
 //Message 宏
-#define MSG_NULL				0x0000
+#define MSG_NULL					0x0000		//空消息
 
-#define MSG_COLLISION			0x4000
-
-#define MSG_OPERATE_KEY			0x1000
-
-#define MSG_OPERATE_UP			0x1001
-#define MSG_OPERATE_DOWN		0x1002
-#define MSG_OPERATE_LEFT		0x1004
-#define MSG_OPERATE_RIGHT		0x1008
-
-#define MSG_CUSTOM				0x5000
-
+/***********************************************/
 //游戏状态
-#define GAME_STATE_PAUSE			0x0001
-#define GAME_STATE_ACTING			0x0003
+#define GAME_STATE_PAUSE			0x0001		//游戏暂停状态
+#define GAME_STATE_NORMAL			0x0002		//游戏运行正常状态
+#define GAME_STATE_FIGHT			0x0004		//战斗状态
+#define GAME_STATE_CHAT				0x0008		//交谈或交易状态
 
+/***********************************************/
+#define MSG_SYSTEM					0x0010		//系统信息偏移
+#define MSG_SYSTEM_EXIT				0x0011		//退出
 
+/***********************************************/
+#define MSG_OPERATE_KEY				0x1000		//按键操作
+
+/***********************************************/
 //精灵状态
-#define PLAYER_STATE_NORMAL			0x1001
+#define PLAYER_STATE_NORMAL			0x1001		//精灵正常状态
+#define NPC_STATE					0x1100		//NPC状态
 
+/***********************************************/
+#define MSG_MOVE					0x1200		//移动消息
 
+/***********************************************/
+#define MSG_COLLISION				0x2000		//刚体碰撞消息
+
+#define MSG_STATE_CONTROL			0x2100		//状态控制
+#define MSG_STATE_EXCUTE			0x2101		//状态机消息
+
+/***********************************************/
+//自定义消息
+#define MSG_CUSTOM					0x3000		//自定义消息类型起始位置
+
+/***********************************************/
+#define MSG_FIGHT_START				0x3001		//战斗开始
+#define MSG_FIGHT_ATTACK			0x3002		//攻击
+#define MSG_FIGHT_DEFENCE			0x3003		//防御
+#define MSG_FIGHT_END				0x3004		//战斗结束
+
+/***********************************************/
+#define MSG_NPC_TRANS_STATE			0x3100		//NPC状态更换标记
+#define MSG_NPC_CHAT				0x3101		//交谈
+
+/***********************************************/
+#define MSG_TASK_ACCEPT				0x3201		//接受任务
+#define MSG_TASK_COMPLETE			0x3202		//完成任务
+
+/***********************************************/
+//节点Tag						
+#define CUSTOM_TAG_START			0x4000		//自定义TAG偏移
+#define PLAYER_ACTOR				0x4001		//主角TAG
 
 #endif

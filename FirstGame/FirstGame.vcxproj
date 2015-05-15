@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -54,6 +54,7 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,24 +79,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="map.txt" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Armor.h" />
+    <ClInclude Include="CALLBACK_1.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="CustomUtils.h" />
     <ClInclude Include="DataUtils.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="DispathMessage.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventCommand.h" />
+    <ClInclude Include="EventSystem.h" />
+    <ClInclude Include="FightSystem.h" />
     <ClInclude Include="FileIO.h" />
     <ClInclude Include="GameLimitState.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LimitedState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="MemoryManager.h" />
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="Message.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NpcActor.h" />
+    <ClInclude Include="OnOffSystem.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ref.h" />
     <ClInclude Include="RenderEngine.h" />
@@ -105,14 +118,23 @@
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TaskSystem.h" />
+    <ClInclude Include="TextOut.h" />
     <ClInclude Include="Value.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CALLBACK_1.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="CustomUtils.cpp" />
     <ClCompile Include="DataUtils.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="DispathMessage.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventCommand.cpp" />
+    <ClCompile Include="EventSystem.cpp" />
+    <ClCompile Include="FightSystem.cpp" />
     <ClCompile Include="FileIO.cpp" />
     <ClCompile Include="FirstGame.cpp" />
     <ClCompile Include="GameLimitState.cpp" />
@@ -123,6 +145,8 @@
     <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NpcActor.cpp" />
+    <ClCompile Include="OnOffSystem.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ref.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
@@ -131,7 +155,11 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskSystem.cpp" />
+    <ClCompile Include="TextOut.cpp" />
     <ClCompile Include="Value.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

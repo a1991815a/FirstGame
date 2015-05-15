@@ -15,5 +15,14 @@ private:
 public:
 	void copyMatrix(char**& matrix_dst, char**& matrix_res, int width, int height);
 	
+	inline bool getTagFromInt(int tag, int num){
+		tag >>= (num - 1);
+		tag &= 0x0001;
+		if(tag == 0x0001)
+		return true;
+		return false;
+	};
+
+
 };
 #endif

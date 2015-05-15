@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
+#include <iostream>
 using namespace std;
 
 #endif
