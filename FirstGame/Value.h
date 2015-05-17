@@ -14,7 +14,7 @@ public:
 	}
 
 	Value(const char* value){
-		strcpy_s(_value._string, 128, value);
+		_value._string = value;
 		_type = CharArray;
 	}
 
@@ -31,7 +31,7 @@ public:
 private:
 	union{
 		int _int;
-		char _string[128];
+		const char* _string;
 		float _float;
 		char _char;
 	} _value;
@@ -51,7 +51,7 @@ public:
 
 	inline int asInt() const{ return _value._int; };
 	inline float asFloat() const{ return _value._float; };
-	inline const char* asCharArray() const{return _value._string; };
+	inline const char* asCharArray() const{ if (!isCharArray()) { char rollback[] = { _value._char }; return rollback; }; return _value._string; };
 	inline char asChar() const{return _value._char; };
 
 };

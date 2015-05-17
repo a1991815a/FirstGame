@@ -7,6 +7,7 @@
 #include "Director.h"
 #include "Player.h"
 #include "stdafx.h"
+#include "CALLBACK_1.h"
 
 Control* Control::_instance = nullptr;
 
@@ -16,6 +17,10 @@ Control* Control::getInstance()
 	{
 		_instance = new Control();
 		_dispathMessage->registerFunc(_instance->getCallBack_1());
+		_dispathMessage->registerFunc(CCALLBACK_1(
+			Control::controlMove,
+			_instance
+			));
 	}
 	return _instance;
 }
@@ -31,32 +36,32 @@ bool Control::callback_1(Message msg)
 	if(msg.getMsg() != MSG_OPERATE_KEY)
 		return false;
 
-	Vec2 pos = _director->getActor()->getPos();
+	Vec2 pos = _director->getPlayer()->getPos();
 
 	switch (msg.getValue().asChar())
 	{
 	case (int)'w':
 		_dispathMessage->sendMsg(Message(
 			MSG_MOVE,
-			_director->getActor(),
+			_director->getPlayer(),
 			Value((int)MoveObj::MoveUp)));
 		break;
 	case (int)'s':
 		_dispathMessage->sendMsg(Message(
 			MSG_MOVE,
-			_director->getActor(),
+			_director->getPlayer(),
 			Value((int)MoveObj::MoveDown)));
 		break;
 	case (int)'a':
 		_dispathMessage->sendMsg(Message(
 			MSG_MOVE,
-			_director->getActor(),
+			_director->getPlayer(),
 			Value((int)MoveObj::MoveLeft)));
 		break;
 	case (int)'d':
 		_dispathMessage->sendMsg(Message(
 			MSG_MOVE,
-			_director->getActor(),
+			_director->getPlayer(),
 			Value((int)MoveObj::MoveRight)));
 		break;
 	default:
@@ -72,9 +77,10 @@ bool Control::controlMove( Message msg )
 		return false;
 
 	Node* node = dynamic_cast<Node*>(msg.getParam());
+
 	if(node == nullptr)
 	{
-		cout << "空指针异常！" << endl;
+		DEBUG_STRING(true, "空指针异常！");
 		return false;
 	}
 	if(!node->getCanMove())

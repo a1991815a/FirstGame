@@ -1,7 +1,8 @@
 #include "FightSystem.h"
 #include "DispathMessage.h"
 #include "Actor.h"
-#include "TextOut.h"
+#include "TextOutUtils.h"
+#include "Monster.h"
 
 FightSystem* FightSystem::_instance = nullptr;
 
@@ -28,12 +29,33 @@ bool FightSystem::fightStart( Message msg )
 {
 	if(msg.getMsg() != MSG_FIGHT_START)
 		return false;
-
-
+	Monster* monster = dynamic_cast<Monster*>(msg.getParam());
+	DEBUG_STRING(!monster, "FightSystem, monster¿ÕÖ¸ÕëÒì³££¡");
+	
 	
 }
 
-bool FightSystem::fightAttack( Message msg )
+void FightSystem::fight(Monster* monster)
+{
+
+}
+
+void FightSystem::attack(Actor* attacker, Actor* defencer)
+{
+	int attacker_ap = attacker->getAttack();
+	int defencer_df = defencer->getDefence();
+
+	int sub_hp = attacker_ap - defencer_df;
+	if (sub_hp < 0)
+		sub_hp = 0;
+
+	defencer->setHp(defencer->getHp() - sub_hp);
+
+	showSubText("%sÊÜµ½¹¥»÷£¬ËðÊ§hp%d", defencer->getName().c_str(), sub_hp);
+
+}
+
+bool FightSystem::fightAttack(Message msg)
 {
 	if(msg.getMsg() != MSG_FIGHT_ATTACK)
 		return false;

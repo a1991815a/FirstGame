@@ -27,6 +27,7 @@ public:
 
 	inline Armor getArmor() const { return armor; }
 	inline void setArmor(Armor val) { armor = val;}
+
 private:
 	int _hp;
 	int _attack;

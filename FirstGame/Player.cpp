@@ -3,6 +3,7 @@
 bool Player::init()
 {
 	setTag(PLAYER_ACTOR);
+	setCanMove(true);
 	return true;
 }
 

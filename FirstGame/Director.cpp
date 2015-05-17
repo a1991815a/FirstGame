@@ -28,8 +28,8 @@ void Director::mainloop()
 {
 	while(true){
 		_control->getCh();
-		_simplePhysicsEngine->CollisionCheck();
-		_gameLimitState->excuteStateAct();
+//		_simplePhysicsEngine->CollisionCheck();
+//		_gameLimitState->excuteStateAct();
 		_dispathMessage->dispathMessage();
 		_renderEngine->clear();
 
@@ -60,7 +60,7 @@ Scene* Director::getCurrentScene() const
 	return CurrentScene;
 }
 
-Player* Director::getActor() const
+Player* Director::getPlayer() const
 {
 	if (CurrentScene == nullptr)
 		return nullptr;

@@ -19,6 +19,7 @@ bool OnOffSystem::getOnOff( int index )
 {
 	if (_onoff_list.find(index) == _onoff_list.end())
 	{
+		DEBUG_STRING(true, "警告:没有设置此开关:%d\0", index);
 		return false;
 	}
 	return _onoff_list.at(index);

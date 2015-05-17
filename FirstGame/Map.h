@@ -5,6 +5,9 @@
 #include "header.h"
 #include "Scene.h"
 
+class Monster;
+class NpcActor;
+
 //µØÍ¼Ä£ÐÍ
 
 class Map : public Node{
@@ -22,7 +25,7 @@ public:
 	inline short getHeight() const{return height;};
 
 	virtual void visit(Vec2 vec) override;
-
+	
 private:
 	char** map_data;
 	short width;

@@ -6,8 +6,8 @@ class Actor;
 class Weapon: public Item{
 public:
 	Weapon(){};
-	Weapon(int attack, int hp, int money)
-		:Item(hp, money){
+	Weapon(string name,int attack, int hp, int money)
+		:Item(name, hp, money){
 		_attack = attack;
 	};
 

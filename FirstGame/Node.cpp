@@ -49,7 +49,7 @@ void Node::releaseChild(string name)
 	for (int i = 0; i < _subNode.size(); i++)
 	{
 		Node*& obj = _subNode.at(i);
-		if (name.compare(obj->_name))
+		if (name == (obj->_name))
 		{
 			obj->release();
 			_subNode.erase(_subNode.begin() + i);
@@ -77,7 +77,7 @@ Node* Node::searchChild(string name)
 	for (int i = 0; i < _subNode.size(); i++)
 	{
 		Node* obj = _subNode.at(i);
-		if (name.compare(obj->_name))
+		if (name == obj->_name)
 		{
 			return obj;
 		}

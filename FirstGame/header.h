@@ -2,7 +2,6 @@
 #define __HEADER__
 
 //各类宏定义
-
 class Node;
 
 struct OnOff{
@@ -116,6 +115,13 @@ enum MoveObj{
 
 /***********************************************/
 #define MSG_MOVE					0x1200		//移动消息
+#define MSG_TO_DIRECTION			0x1201		//转向消息
+#define MSG_AUTO_MOVE				0x1202		//移动消息
+#define MSG_AUTO_TO_DIRECTION		0x1203		//转向消息
+
+/***********************************************/
+#define MSG_ONOFF					0x1300		//开关消息
+#define MSG_STATIC_ONOFF			0x1301		//开关消息
 
 /***********************************************/
 #define MSG_COLLISION				0x2000		//刚体碰撞消息
@@ -140,6 +146,9 @@ enum MoveObj{
 /***********************************************/
 #define MSG_TASK_ACCEPT				0x3201		//接受任务
 #define MSG_TASK_COMPLETE			0x3202		//完成任务
+
+/***********************************************/
+#define MSG_EVENT_CHANGE_STATE		0x3301		//改变TASK状态
 
 /***********************************************/
 //节点Tag						

@@ -9,6 +9,7 @@ GameLimitState* GameLimitState::getInstance()
 	if (_instance == nullptr)
 	{
 		_instance = new GameLimitState();
+		_instance->transState(GAME_STATE_NORMAL);
 
 	}
 	return _instance;

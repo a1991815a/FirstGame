@@ -6,12 +6,15 @@
 #include "FileIO.h"
 #include "Map.h"
 #include "Player.h"
-#include "TextOut.h"
+#include "TextOutUtils.h"
+#include <assert.h>
 
-#define GameVersion 1.0
+#define GameVersion 6.0f
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	float d = GameVersion;
+	DEBUG_STRING(true, "DEBUG模式开启!%ff", 0.6f);
 	try
 	{
 		_director->initAll();
@@ -34,7 +37,7 @@ void GameMain(){
 
 	_director->setScene(scene);
 	Player* player = Player::create();
-	player->setTexture("壹");
+	player->setTexture("二");
 	player->setPos(1,13);
 	map->addChild(player, 5);
 	scene->setActor(player);

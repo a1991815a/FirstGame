@@ -24,7 +24,7 @@ public:
 
 	Scene* getCurrentScene() const;
 
-	Player* getActor() const;
+	Player* getPlayer() const;
 private:
 	Scene* CurrentScene;
 

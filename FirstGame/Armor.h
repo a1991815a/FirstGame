@@ -5,8 +5,8 @@
 class Armor: public Item{
 public:
 	Armor(){};
-	Armor(int hp, int defence, int money)
-		:Item(hp, money)
+	Armor(string name, int hp, int defence, int money)
+		:Item(name, hp, money)
 	{
 		_defence = defence;
 	}

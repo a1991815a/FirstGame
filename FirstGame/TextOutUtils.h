@@ -3,17 +3,17 @@
 #include "stdafx.h"
 #include "RenderEngine.h"
 
-#define _textOut TextOut::getInstance()
+#define _textOutUtils TextOutUtils::getInstance()
 
 #define showSubText(format, ...) _renderEngine->setSubText(format, __VA_ARGS__)
 #define showSideText(format, ...) _renderEngine->setSideText(format, __VA_ARGS__)
 
-class TextOut{
+class TextOutUtils{
 public:
-	static TextOut* getInstance();
+	static TextOutUtils* getInstance();
 
 private:
-	static TextOut* _instance;
+	static TextOutUtils* _instance;
 
 public:
 };
