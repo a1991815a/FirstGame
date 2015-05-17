@@ -49,15 +49,6 @@
     <Filter Include="游戏\模型">
       <UniqueIdentifier>{3cb2cb37-05a7-4198-9284-d211a1f0de3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="游戏\模型\头文件">
-      <UniqueIdentifier>{5ceb482f-15ec-4533-9b7c-af2a3bd933bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="游戏\模型\源文件">
-      <UniqueIdentifier>{f100aceb-9899-40ee-b5b6-a5d9fcd11408}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="游戏\建筑">
-      <UniqueIdentifier>{cc3c2579-a742-405d-a92d-d5cfc0dc4e7c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="游戏\系统">
       <UniqueIdentifier>{1e31b521-68dc-48d8-a255-531024479a64}</UniqueIdentifier>
     </Filter>
@@ -75,6 +66,21 @@
     </Filter>
     <Filter Include="游戏\管理器">
       <UniqueIdentifier>{510f24a8-1e1f-4e06-aec1-1e956386e260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\角色">
+      <UniqueIdentifier>{091f38e1-a584-47d0-a1d7-6a1e994efba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\道具">
+      <UniqueIdentifier>{d234e5a9-51f5-4aea-bd43-5524a47f3944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\区域">
+      <UniqueIdentifier>{174bed56-cb81-4647-a38c-2129066711ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\模型\任务">
+      <UniqueIdentifier>{23282066-3b43-42d9-967b-42f87d097e0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\脚本">
+      <UniqueIdentifier>{e4658c7a-1ec6-462e-9e32-5f017fdd1406}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -148,63 +154,63 @@
     <ClInclude Include="Control.h">
       <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
     <ClInclude Include="CALLBACK_1.h">
       <Filter>游戏引擎\模型\头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="FightSystem.h">
-      <Filter>游戏\系统\战斗</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskSystem.h">
-      <Filter>游戏\系统\任务</Filter>
-    </ClInclude>
     <ClInclude Include="header.h" />
-    <ClInclude Include="NpcActor.h">
-      <Filter>游戏\模型\头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="EventSystem.h">
-      <Filter>游戏\系统\事件</Filter>
-    </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>游戏\系统\事件</Filter>
-    </ClInclude>
-    <ClInclude Include="OnOffSystem.h">
-      <Filter>游戏\系统</Filter>
-    </ClInclude>
-    <ClInclude Include="Task.h">
-      <Filter>游戏\系统\任务</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptInterpreter.h">
-      <Filter>游戏\系统\事件</Filter>
-    </ClInclude>
     <ClInclude Include="TextOutUtils.h">
       <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>游戏引擎\模型\源文件</Filter>
     </ClInclude>
-    <ClInclude Include="House.h">
-      <Filter>游戏\建筑</Filter>
+    <ClInclude Include="Actor.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>游戏\模型\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>游戏\模型\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>游戏\模型\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="Area.h">
+      <Filter>游戏\模型\区域</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>游戏\模型\区域</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>游戏\模型\区域</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticOnOff.h">
+      <Filter>游戏</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>游戏\模型\任务</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptUtils.h">
+      <Filter>游戏\脚本</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>游戏\脚本</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>游戏\管理器</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
+      <Filter>游戏\模型\道具</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -277,52 +283,58 @@
     <ClCompile Include="Control.cpp">
       <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>游戏\模型\源文件</Filter>
-    </ClCompile>
     <ClCompile Include="CALLBACK_1.cpp">
       <Filter>游戏引擎\模型\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>游戏\模型\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="FightSystem.cpp">
-      <Filter>游戏\系统\战斗</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskSystem.cpp">
-      <Filter>游戏\系统\任务</Filter>
-    </ClCompile>
-    <ClCompile Include="NpcActor.cpp">
-      <Filter>游戏\模型\源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="EventSystem.cpp">
-      <Filter>游戏\系统\事件</Filter>
-    </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>游戏\系统\事件</Filter>
-    </ClCompile>
-    <ClCompile Include="OnOffSystem.cpp">
-      <Filter>游戏\系统</Filter>
-    </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>游戏\系统\任务</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptInterpreter.cpp">
-      <Filter>游戏\系统\事件</Filter>
     </ClCompile>
     <ClCompile Include="TextOutUtils.cpp">
       <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
-    <ClCompile Include="House.cpp">
-      <Filter>游戏\建筑</Filter>
+    <ClCompile Include="ScriptUtils.cpp">
+      <Filter>游戏\脚本</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>游戏\模型\角色</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>游戏\模型\角色</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>游戏\脚本</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>游戏\模型\角色</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>游戏\模型\道具</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>游戏\模型\道具</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>游戏\模型\道具</Filter>
+    </ClCompile>
+    <ClCompile Include="Area.cpp">
+      <Filter>游戏\模型\区域</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>游戏\管理器</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>游戏\模型\区域</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>游戏\模型\区域</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
+      <Filter>游戏\模型\道具</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="event.txt">
       <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="..\脚本.txt">
+      <Filter>游戏</Filter>
     </Text>
   </ItemGroup>
 </Project>

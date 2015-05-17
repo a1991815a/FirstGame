@@ -1,40 +1,36 @@
 #ifndef __ACTOR__
 #define __ACTOR__
-#include "Weapon.h"
+#include "stdafx.h"
 #include "Sprite.h"
-#include "Armor.h"
+
+class Weapon;
+class Armor;
+
+//hp, attack, defence, weapon, armor
 
 class Actor: public Sprite{
 public:
-	Actor(){
-		_hp = 0;
-		_attack = 0;
-		_defence = 0;
-		_level = 0;
-	};
+	void init(int hp, int attack, int defence);
+
+	inline Weapon* getWeapom() const { return _weapon; }
+	inline void setWeapom(Weapon* val) { _weapon = val; }
+	inline Armor* getArmor() const { return _armor; }
+	inline void setArmor(Armor* val) { _armor = val; }
 
 	inline int getHp() const { return _hp; }
 	inline void setHp(int val) { _hp = val; }
-	inline int getAttack() const { return _attack + weapon.getAttack(); }
-	inline void setAttack(int val) { _attack = val; }
-	inline int getDefence() const { return _defence + armor.getDefence(); }
+
+	int getAttack() const; //{ return _attack; }
+	void setAttack(int val) { _attack = val; }
+
+	int getDefence() const; //{ return _defence; }
 	inline void setDefence(int val) { _defence = val; }
-	inline int getLevel() const { return _level; }
-	inline void setLevel(int val) { _level = val; }
-
-	inline Weapon getWeapon() const { return weapon; }
-	inline void setWeapon(Weapon val) { weapon = val; }
-
-	inline Armor getArmor() const { return armor; }
-	inline void setArmor(Armor val) { armor = val;}
-
 private:
 	int _hp;
 	int _attack;
 	int _defence;
-	int _level;
-
-	Weapon weapon;
-	Armor armor;
+	Weapon* _weapon;
+	Armor* _armor;
 };
+
 #endif

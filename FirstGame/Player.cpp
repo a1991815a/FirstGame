@@ -2,20 +2,9 @@
 
 bool Player::init()
 {
-	setTag(PLAYER_ACTOR);
-	setCanMove(true);
+	_level = 0;
+	_money = 100;
+	Actor::init(100, 10, 5);
+
 	return true;
-}
-
-void Player::initPlayer( int hp, int attack, int defence )
-{
-	setHp(hp);
-	setAttack(attack);
-	setDefence(defence);
-}
-
-void Player::levelUp(int uplevel)
-{
-	setAttack(getAttack() + uplevel * _level_factor * 2);
-	setDefence(getDefence() + uplevel * _level_factor );
 }

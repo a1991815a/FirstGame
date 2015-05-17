@@ -4,16 +4,10 @@
 
 class Armor: public Item{
 public:
-	Armor(){};
-	Armor(string name, int hp, int defence, int money)
-		:Item(name, hp, money)
-	{
-		_defence = defence;
-	}
-
+	Armor(string name, int price, int durable, int defence);
 	inline int getDefence() const { return _defence; }
 	inline void setDefence(int val) { _defence = val; }
-
+	static Armor getArmor(int tag);
 private:
 	int _defence;
 };

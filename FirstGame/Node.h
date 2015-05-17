@@ -50,15 +50,12 @@ public:
 	inline Node* getParent() const { return _parent; }
 
 	inline Vec2 getPos() const { return pos; }
-	inline void setPos(int x, int y) { before_pos = pos; pos.x = x; pos.y = y;}
+	inline virtual void setPos(int x, int y) {pos.x = x; pos.y = y;}
 
-	inline void setPosUp(){ before_pos = pos; pos.y++; }
-	inline void setPosDown(){ before_pos = pos; pos.y--; }
-	inline void setPosLeft(){ before_pos = pos; pos.x--; }
-	inline void setPosRight(){ before_pos = pos; pos.x++; }
-
-	inline Vec2 getBeforePos() const { return before_pos; }
-	inline void resetPos() {pos = before_pos;};
+	inline virtual void setPosUp(){ pos.y++; }
+	inline virtual void setPosDown(){ pos.y--; }
+	inline virtual void setPosLeft(){ pos.x--; }
+	inline virtual void setPosRight(){ pos.x++; }
 
 	bool getCanMove() const { return canMove; }
 	void setCanMove(bool val) { canMove = val; }
@@ -68,7 +65,6 @@ private:
 	Node* _parent;				//父亲
 	vector<Node*> _subNode;		//子列
 	Vec2 pos;					//坐标
-	Vec2 before_pos;			//下一次要移动的坐标
 	bool canMove;				//是否为可移动状态
 protected:
 	int _z;						//_z坐标也是渲染顺序(用于遮盖) 最大为10

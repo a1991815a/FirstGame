@@ -1,11 +1,8 @@
-#ifndef __MAPCHECKER__
-#define __MAPCHECKER__
+#ifndef __GAMEMANAGER__
+#define __GAMEMANAGER__
 #include "stdafx.h"
 
-class Monster;
-class Node;
-class NpcActor;
-class House;
+class Player;
 
 #define _gameManager GameManager::getInstance()
 
@@ -16,11 +13,6 @@ private:
 	static GameManager* _instance;
 
 public:
-	Node* checkCollision(Vec2 pos);
-	Monster* checkTouchMonster(Vec2 pos);
-	NpcActor* checkTouchNpc(Vec2 pos);
-	House* checkInHouse(Vec2 pos);
-
-	void trigger();
+	Player* getPlayer();
 };
 #endif

@@ -5,7 +5,6 @@
 #include "header.h"
 #include "Value.h"
 #include "Director.h"
-#include "Player.h"
 #include "stdafx.h"
 #include "CALLBACK_1.h"
 

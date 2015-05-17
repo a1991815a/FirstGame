@@ -1,0 +1,77 @@
+Map(地图):
+data, width, height, tag
+
+角色(Actor):public Sprite
+hp, attack, defence, weapon, armor, *name, *texture, *pos
+
+敌人(enemy):public Actor
+
+主角:public Actor
+before_pos,,money,level
+
+NPC:public Sprite
+vector<脚本>
+
+道具:
+name, price, durable(耐久)
+
+武器:public 道具:
+attack
+
+防具:public 道具:
+defence
+
+区域:public Node
+*tag,pos_list,vector<脚本>
+
+商店:public 区域
+*name,*texture,*pos, items;
+
+门:public 区域:
+脚本操作重写
+
+任务:
+tag, 接受条件, 完成条件,
+
+全局开关(map):
+tag,state
+
+
+脚本实现:
+
+格式:
+
+取变量:		类型:tag[变量名]
+
+变量 条件 变量{
+	功能1;
+	功能2;
+	功能3;
+}
+
+条件:
+isAcceptTask(tag);
+isCompleteTask(tag);
+isAlive(tag);
+isDead(tag);
+isOn(tag);
+>, <, <>, =, <=, >=
+
+
+功能:
+showSub(string), showSide(string),					//文本信息
+acceptTask(tag), completeTask(tag),					//任务脚本
+gotoMap(tag, pos),									//地图转换
+buyItem(name), sellItemm(), achiveItem(name),		//商店系统
+fightStart(Enemy),fightEnd(Enemy)					//战斗系统
+
+
+
+
+
+
+
+
+
+
+

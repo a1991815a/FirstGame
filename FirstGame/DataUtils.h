@@ -23,6 +23,11 @@ public:
 		return false;
 	};
 
+	string getFromDoubleChar(string& in_data,char left, char right, int& index, int offset = 0);
+	vector<string> splitString(string& in_data, char split_char, int& index, int offset = 0);
 
+	string getFrontChar(string& in_data, char front_char, int& index, int offset = 0);
+
+	void deleteCharFromString(string& in_data, char delete_char, int& index, int offset = 0);
 };
 #endif

@@ -12,6 +12,7 @@
 #include <functional>
 #include <iostream>
 #include <conio.h>
+#include "Value.h"
 
 #ifdef _DEBUG
 #include <windows.h>

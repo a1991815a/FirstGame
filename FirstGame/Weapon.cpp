@@ -1,8 +1,13 @@
 #include "Weapon.h"
-#include "Actor.h"
-#include "DispathMessage.h"
 
-void Weapon::attackObj( Actor* node )
+Weapon::Weapon(string name, int price, int durable, int attack)
+	:Item(name, price, durable)
 {
-	_dispathMessage->sendMsg(Message(MSG_FIGHT_ATTACK, node, Value(_attack)));
+	_attack = attack;
+}
+
+Weapon Weapon::getWeapon(int tag)
+{
+	Weapon* weapon = dynamic_cast<Weapon*>(Item::item_list.at(tag));
+	return *weapon;
 }
