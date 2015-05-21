@@ -1,9 +1,8 @@
 #ifndef __VALUE__
 #define __VALUE__
 #include "stdafx.h"
-#include "Ref.h"
 
-class Value: public Ref{
+class Value{
 public:
 	enum ValueType{
 		None,Int,Float,CharArray,Char

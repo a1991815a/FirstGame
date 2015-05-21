@@ -53,6 +53,7 @@ void RenderEngine::clear()
 {
 	for (int row = 0; row < MAX_HEIGHT; row++)
 	{
+		memset(display_data[row], '\0', MAX_WIDTH + 1);
 		for (int col = 0; col < MAX_WIDTH + 1; col++)
 		{
 			display_data[row][col] = '\0';
@@ -76,6 +77,23 @@ void RenderEngine::assembleFragment()
 			));
 	}
 	_command_list.clear();
+	
+
+
+}
+
+void RenderEngine::assembleSubText()
+{
+	for (int row = 0; row < MAX_HEIGHT; row++)
+	{
+		
+	}
+	
+}
+
+void RenderEngine::assembleSideText()
+{
+
 }
 
 void RenderEngine::cutBuf()
@@ -88,9 +106,9 @@ void RenderEngine::cutBuf()
 		}
 	}
 
-	for (int col=0; col < MAX_WIDTH; col++)
+	for (int col=CUT_WIDTH; col < MAX_WIDTH; col++)
 	{
-		for (int row=CUT_WIDTH; row < MAX_HEIGHT; row++)
+		for (int row=0; row < CUT_HEIGHT + 1; row++)
 		{
 			display_data[row][col] = '\0';
 		}
@@ -102,21 +120,21 @@ void RenderEngine::setSubText( string format, ... )
 {
 	va_list ap;
 	va_start(ap,format);
-	char out_text[1024];
+	char out_text[1024] = {0};
 	vsprintf_s(out_text, 1024, format.c_str(), ap);
 	va_end(ap);
 	sub_text += out_text;
 }
 
 
-void RenderEngine::setSideText( string format, ... )
+void RenderEngine::setSideText(int row, string format, ... )
 {
 	va_list ap;
 	va_start(ap,format);
 	char out_text[1024];
 	vsprintf_s(out_text, 1024, format.c_str(), ap);
 	va_end(ap);
-	side_text += out_text;
+	side_text[row] += out_text;
 }
 
 void RenderEngine::renderSubText()
@@ -139,12 +157,19 @@ void RenderEngine::renderSubText()
 
 void RenderEngine::renderSideText(int row)
 {
-	const int max_row = std::ceil((float)((float)side_text.size() / (float)SIDE_TEXT_SIZE_WIDTH));
-	if (row >= max_row)
+	if (row >= MAX_HEIGHT)
 	{
 		return;
 	}
-	char show_text[SIDE_TEXT_SIZE_WIDTH + 1] = {0};
-	side_text.copy(show_text,SIDE_TEXT_SIZE_WIDTH, row * SIDE_TEXT_SIZE_WIDTH);
-	cout << "　　*" << show_text;
+	cout << "　　*" << side_text[row].c_str();
+}
+
+void RenderEngine::clearSubTextBuf()
+{
+
+}
+
+void RenderEngine::clearSideTextBuf()
+{
+
 }

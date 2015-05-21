@@ -7,8 +7,6 @@
 
 class Sprite : public Node{
 public:
-	CREATE_FUNC(Sprite);
-
 	virtual bool init();
 
 	virtual void visit(Vec2 vec);

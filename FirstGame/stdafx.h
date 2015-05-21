@@ -13,18 +13,18 @@
 #include <iostream>
 #include <conio.h>
 #include "Value.h"
+#include <windows.h>
 
 #ifdef _DEBUG
-#include <windows.h>
 
 #define  CCASSERT(_Expression, _log) (void)( (!!(_Expression)) || \
 (_CrtDbgReport(_CRT_ASSERT, __FILE__, __LINE__,0,_log), 0) );
 
 #define DEBUG_STRING(condition,format,...)											\
 	if(condition){																	\
-		wchar_t debug_out[256];														\
-		wsprintf(debug_out, _T(format)##_T("\r\n"), __VA_ARGS__);					\
-		OutputDebugStringW(debug_out);}	
+		TCHAR debug_out[256];														\
+		wsprintfA(debug_out, _T(format)##_T("\r\n"), __VA_ARGS__);					\
+		OutputDebugStringA(debug_out);}	
 
 
 

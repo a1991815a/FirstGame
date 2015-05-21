@@ -28,6 +28,5 @@ private:
 	char** final_data;
 	Map* _map;
 	Player* _actor;
-	
 };
 #endif

@@ -22,11 +22,14 @@ public:
 
 	void assembleFragment();
 
+	void assembleSubText();
+	void assembleSideText();
+
 	void sendCommand(Node* node, Vec2 pos);
 
 	inline void addRenderData(char texture, Vec2 render_pos){
-		if(render_pos.x < 0 || render_pos.x > MAX_HEIGHT ||
-			render_pos.y < 0 || render_pos.y > MAX_WIDTH)
+		if (render_pos.x < 0 || render_pos.x > MAX_WIDTH ||
+			render_pos.y < 0 || render_pos.y > MAX_HEIGHT)
 			return;
 		display_data[render_pos.y][render_pos.x] = texture;
 	};
@@ -36,15 +39,22 @@ public:
 	void clear();
 
 	void setSubText(string format, ...);
-	void setSideText(string format, ...);
+	void setSideText(int row, string format, ...);
 
 	void renderSubText();
-	void renderSideText(int row);
+	void renderSideText(int row = 0);
+
+	void clearSubTextBuf();
+	void clearSideTextBuf();
+
+	string* getOutText(){ return &out_text; };
 private:
 	char** display_data;
 
 	string sub_text;
-	string side_text;
+	string side_text[MAX_HEIGHT];
+
+	string out_text;
 
 	vector<RenderCommand> _command_list;
 };

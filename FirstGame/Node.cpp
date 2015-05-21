@@ -9,7 +9,6 @@ Node::Node()
 	_tag = -1;
 	_parent = nullptr;
 	pos = Vec2();
-	before_pos = Vec2();
 }
 
 Node::~Node()
@@ -17,16 +16,11 @@ Node::~Node()
 
 }
 
-void Node::addChild(Node* node)
+void Node::addChild( Node* node, int z )
 {
 	node->_parent = this;
 	_subNode.push_back(node);
 	node->retain();
-}
-
-void Node::addChild( Node* node, int z )
-{
-	addChild(node);
 	node->_z = z;
 }
 

@@ -15,6 +15,8 @@ private:
 public:
 	void getCh();
 
+	void listenKeyboard();
+
 private:
 	virtual bool callback_1(Message msg) override;
 

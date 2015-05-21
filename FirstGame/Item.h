@@ -1,24 +1,30 @@
 #ifndef __ITEM__
 #define __ITEM__
 #include "stdafx.h"
+#include "Node.h"
 
-class Item{
+class Item: public Ref{
 public:
-	Item(string name, int price, int durable);
+	Item(){};
+	Item(int type){ _name = "Item"; _tag = 0; _type = type; };
+	Item(string name, int tag, int type);
 	inline std::string getName() const { return _name; }
 	inline void setName(std::string val) { _name = val; }
-	inline int getPrice() const { return _price; }
-	inline void setPrice(int val) { _price = val; }
-	inline int getDurable() const { return _durable; }
-	inline void setDurable(int val) { _durable = val; }
-	inline void subDurable(int val) { _durable -= val; }
+	inline int getTag() const { return _tag; }
+	inline void setTag(int val) { _tag = val; }
+
+	inline int getType() const{ return _type; };
 
 	virtual ~Item(){};
-protected:
-	static map<int, Item*> item_list;
 private:
 	string _name;
-	int _price;
-	int _durable;
+	int _tag;
+
+	
+public:
+	bool operator==(Item item);
+
+private:
+	int _type;
 };
 #endif

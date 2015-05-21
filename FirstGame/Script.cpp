@@ -1,6 +1,6 @@
-#include "Script.h"
-
-bool Script::excute()
-{
-
-}
+// #include "Script.h"
+// 
+// bool Script::excute()
+// {
+// 
+// }

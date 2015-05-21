@@ -6,7 +6,7 @@
 #define _textOutUtils TextOutUtils::getInstance()
 
 #define showSubText(format, ...) _renderEngine->setSubText(format, __VA_ARGS__)
-#define showSideText(format, ...) _renderEngine->setSideText(format, __VA_ARGS__)
+#define showSideText(row,format, ...) _renderEngine->setSideText(row,format, __VA_ARGS__)
 
 class TextOutUtils{
 public:

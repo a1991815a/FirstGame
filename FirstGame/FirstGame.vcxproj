@@ -53,7 +53,7 @@
       </PrecompiledHeader>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
@@ -82,12 +82,16 @@
   <ItemGroup>
     <None Include="map.txt" />
     <None Include="ReadMe.txt" />
+    <None Include="User.inf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Area.h" />
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="AssembleSystem.h" />
+    <ClInclude Include="Bag.h" />
     <ClInclude Include="CALLBACK_1.h" />
+    <ClInclude Include="ConsoleBufferUtils.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="CustomUtils.h" />
     <ClInclude Include="DataUtils.h" />
@@ -95,20 +99,26 @@
     <ClInclude Include="DispathMessage.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Equipment.h" />
+    <ClInclude Include="FightSystem.h" />
     <ClInclude Include="FileIO.h" />
+    <ClInclude Include="GameAIUtils.h" />
     <ClInclude Include="GameLimitState.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GuiManager.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemManager.h" />
     <ClInclude Include="LimitedState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapManager.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="MemoryManager.h" />
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcSoldier.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ref.h" />
     <ClInclude Include="RenderEngine.h" />
@@ -116,6 +126,7 @@
     <ClInclude Include="Script.h" />
     <ClInclude Include="ScriptUtils.h" />
     <ClInclude Include="SimplePhysicsEngine.h" />
+    <ClInclude Include="SoldierAI.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="StaticOnOff.h" />
@@ -124,6 +135,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="TextOutUtils.h" />
+    <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="UserManager.h" />
     <ClInclude Include="Value.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
@@ -131,17 +144,24 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="AssembleSystem.cpp" />
+    <ClCompile Include="Bag.cpp" />
     <ClCompile Include="CALLBACK_1.cpp" />
+    <ClCompile Include="ConsoleBufferUtils.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="CustomUtils.cpp" />
     <ClCompile Include="DataUtils.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="DispathMessage.cpp" />
     <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FightSystem.cpp" />
     <ClCompile Include="FileIO.cpp" />
     <ClCompile Include="FirstGame.cpp" />
+    <ClCompile Include="GameAIUtils.cpp" />
     <ClCompile Include="GameLimitState.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GuiManager.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="LimitedState.cpp" />
@@ -159,17 +179,21 @@
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="ScriptUtils.cpp" />
     <ClCompile Include="SimplePhysicsEngine.cpp" />
+    <ClCompile Include="SoldierAI.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="TextOutUtils.cpp" />
+    <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="UserManager.cpp" />
     <ClCompile Include="Value.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\脚本.txt" />
     <Text Include="event.txt" />
+    <Text Include="map2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

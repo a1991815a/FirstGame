@@ -10,14 +10,13 @@ GameLimitState* GameLimitState::getInstance()
 	{
 		_instance = new GameLimitState();
 		_instance->transState(GAME_STATE_NORMAL);
-
 	}
 	return _instance;
 }
 
 void GameLimitState::excuteStateAct()
 {
-	stateControl(GAME_STATE_PAUSE | GAME_STATE_CHAT, MSG_MOVE);
+	stateControl(GAME_STATE_CHAT, MSG_MOVE);
 }
 
 void GameLimitState::stateControl( int state, int what)

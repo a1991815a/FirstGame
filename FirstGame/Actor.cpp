@@ -9,16 +9,10 @@ void Actor::init(int hp, int attack, int defence)
 
 int Actor::getAttack() const
 {
-	if (_weapon)
-	{
-	}
-	return _attack;
+	return _attack + _weapon.getAttack();
 }
 
 int Actor::getDefence() const
 {
-	if (_armor)
-	{
-	}
-	return _defence;
+	return _defence + _armor.getDefence();
 }

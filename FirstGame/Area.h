@@ -6,15 +6,12 @@
 
 class Area: public Node{
 public:
-	virtual void trigger();
+/*	virtual void trigger();*/
 
 	void pushPos(Vec2 pos);
-
-	void pushScript(Script script);
 	
 private:
 	vector<Vec2> pos_list;
-	vector<Script> script_list;
 };
 
 #endif

@@ -6,7 +6,7 @@ Door::Door(int tag, Vec2 pos)
 	next_pos = pos;
 }
 
-void Door::trigger()
-{
-
-}
+// void Door::trigger()
+// {
+// 
+// }

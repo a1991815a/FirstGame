@@ -1,45 +1,81 @@
-Map(地图):
-data, width, height, tag
+建模:{
+	Map(地图):
+	data, width, height, tag
 
-角色(Actor):public Sprite
-hp, attack, defence, weapon, armor, *name, *texture, *pos
+	角色(Actor):public Sprite
+	hp, attack, defence, weapon, armor, *name, *texture, *pos， ----before_pos（用于碰撞）, 角色类型(枚举:主角,NPC战士)
 
-敌人(enemy):public Actor
+	敌人(enemy):public Actor
+	dropItem;掉落材料, isBoss是否为Boss级;
+	
+	材料:public Item
+	name
 
-主角:public Actor
-before_pos,,money,level
+	主角:public Sprite
+	hp,level
 
-NPC:public Sprite
-vector<脚本>
+	Npc:public Sprite
+	vector<脚本>
 
-道具:
-name, price, durable(耐久)
+	NpcSolider:public Actor;
+	
+	道具:
+	name道具类型(枚举:武器，防具，材料)
 
-武器:public 道具:
-attack
+	武器:public 道具:
+	attack,vector<ItemTag>合成材料
 
-防具:public 道具:
-defence
+	防具:public 道具:
+	defence,vector<ItemTag>合成材料
 
-区域:public Node
-*tag,pos_list,vector<脚本>
+	区域:public Node
+	*tag,pos_list,vector<脚本>
 
-商店:public 区域
-*name,*texture,*pos, items;
+	商店:public 区域
+	*name,*texture,*pos, items;
 
-门:public 区域:
-脚本操作重写
+	门:public 区域:
+	脚本操作重写
 
-任务:
-tag, 接受条件, 完成条件,
+	任务:
+	tag, 接受条件, 完成条件,
 
-全局开关(map):
-tag,state
+	全局开关(map):
+	tag,state
+}
 
+模块:
+	人工智能:
+		自动寻路找怪
+	
+	物理引擎:(碰撞)
+		重叠碰撞(重叠后发送碰撞信息,然后调用resetPos()):碰撞回调函数 bool checkRigid(Message)
+		
+	战斗:(野外战斗:搜集材料)(村庄防御战:获得奖励<最大敌人5个>)
+		NPC战斗:(碰撞式攻击,寻路找怪)
 
+	任务:(获得奖励或开启地图)
+
+	NPC战士招募:根据主角当前等级决定招募数量, 最大为5
+	
+	背包:存放材料以及各类装备
+	
+	控制器(改进):
+		if _kbhit() == 1 then _getch();(非阻塞)先检测再去缓冲区数据
+
+	渲染器(改进):
+		2-4帧渲染方式:
+		
+	消息分发器:
+		按帧数渲染
+
+	计时器:
+		获取延时和软件启动时间
+	
 脚本实现:
 
 格式:
+
 
 取变量:		类型:tag[变量名]
 
@@ -47,24 +83,48 @@ tag,state
 	功能1;
 	功能2;
 	功能3;
+	。。。;
 }
 
 条件:
 isAcceptTask(tag);
 isCompleteTask(tag);
 isAlive(tag);
+isExist(type, tag);
 isDead(tag);
 isOn(tag);
 >, <, <>, =, <=, >=
 
-
 功能:
-showSub(string), showSide(string),					//文本信息
-acceptTask(tag), completeTask(tag),					//任务脚本
-gotoMap(tag, pos),									//地图转换
-buyItem(name), sellItemm(), achiveItem(name),		//商店系统
-fightStart(Enemy),fightEnd(Enemy)					//战斗系统
+showSub(string), showSide(string),						//文本信息
+acceptTask(tag), completeTask(tag),						//任务脚本
+gotoMap(tag, pos),								//地图转换
+buyItem(name), sellItem(), achiveItem(name),					//商店系统
+fightAttack(Enemy),fightEnd(Enemy)						//战斗系统
+createArmor(tag), deleteArmor(tag), createWeapon(tag),deleteWeapon(tag)		//道具操作
 
+
+
+可定义数据类型:		
+类型:备注
+可操作变量
+
+主角:only one
+hp,level
+
+enemy:
+hp,attack,defence,isBoss
+
+
+
+Npc:
+{
+~脚本1
+}
+
+武器:
+
+防具:
 
 
 

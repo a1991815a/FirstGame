@@ -1,6 +1,7 @@
 #include "FileIO.h"
 #include "Map.h"
 #include <iostream>
+#include "DataUtils.h"
 
 FileIO* FileIO::_instance = nullptr;
 
@@ -63,6 +64,35 @@ void FileIO::getHeaderFromFile( FILE*& file, int* width, int* height )
 	}
 
 	fseek(file,2,SEEK_CUR);
+}
+
+vector<User> FileIO::loadUserFromFile(string filename)
+{
+	vector<User> vu;
+	FILE* file = nullptr;
+	fopen_s(&file, filename.c_str(), "rb+");
+	long file_size = getFileSize(file);
+	char* user_text = new char[file_size];
+	fread_s(user_text, file_size, sizeof(char), file_size, file);
+	fclose(file);
+	int index = 0;
+	string split_data = user_text;
+	_dataUtils->deleteCharFromString(split_data, '\r', index);
+	vector<string> string_list = _dataUtils->splitString(split_data, '\n', index);
+	for (int i = 0; i < string_list.size(); i++)
+	{
+		string& obj = string_list.at(i);
+		vector<string> user_t = _dataUtils->splitString(obj, ',', index);
+		if (user_t.size() == 2)
+		{
+			User u;
+			u.name = user_t.at(0);
+			u.password = user_t.at(1);
+			vu.push_back(u);
+		}
+	}
+
+	return vu;
 }
 
 

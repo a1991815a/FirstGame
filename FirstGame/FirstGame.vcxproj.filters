@@ -55,12 +55,6 @@
     <Filter Include="游戏\系统\战斗">
       <UniqueIdentifier>{f8b37ebd-c320-4a62-b4c4-32ce1b54e520}</UniqueIdentifier>
     </Filter>
-    <Filter Include="游戏\系统\任务">
-      <UniqueIdentifier>{1314bcdd-86d4-4ea0-aa23-bd40842c3734}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="游戏\系统\事件">
-      <UniqueIdentifier>{9b04028b-5d27-410c-8d01-4184c81d730e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="游戏引擎\模型\头文件\工具类">
       <UniqueIdentifier>{d67b8cbe-1bbd-4187-8810-c127a04ac3c3}</UniqueIdentifier>
     </Filter>
@@ -82,10 +76,29 @@
     <Filter Include="游戏\脚本">
       <UniqueIdentifier>{e4658c7a-1ec6-462e-9e32-5f017fdd1406}</UniqueIdentifier>
     </Filter>
+    <Filter Include="游戏\系统\装备合成">
+      <UniqueIdentifier>{16f3382c-6707-40de-ac3a-cc58cdbe8737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\系统\背包">
+      <UniqueIdentifier>{1e397b57-21b7-401b-abae-74bbaacf65e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\UI">
+      <UniqueIdentifier>{f9ae6dc0-2f26-406e-a138-241f5d027a08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏\登陆注册">
+      <UniqueIdentifier>{cb543964-2290-49b3-8b28-cdcd72c705b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\双缓冲渲染器">
+      <UniqueIdentifier>{a8b38661-f015-42cc-ba4d-a0887d370b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏引擎\双缓冲渲染器\控制台缓冲控制">
+      <UniqueIdentifier>{f49c67a4-2ab8-4826-8da3-8990ea927c49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
     <None Include="map.txt" />
+    <None Include="User.inf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -141,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="CustomUtils.h">
       <Filter>游戏引擎\模型\头文件\工具类</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderEngine.h">
-      <Filter>游戏引擎\通用模块\头文件</Filter>
     </ClInclude>
     <ClInclude Include="SimplePhysicsEngine.h">
       <Filter>游戏引擎\通用模块\头文件</Filter>
@@ -212,6 +222,45 @@
     <ClInclude Include="ItemManager.h">
       <Filter>游戏\模型\道具</Filter>
     </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>游戏\模型\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>游戏\模型\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcSoldier.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>游戏引擎\通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameAIUtils.h">
+      <Filter>游戏引擎\通用模块\头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FightSystem.h">
+      <Filter>游戏\系统\战斗</Filter>
+    </ClInclude>
+    <ClInclude Include="Bag.h">
+      <Filter>游戏\系统\背包</Filter>
+    </ClInclude>
+    <ClInclude Include="AssembleSystem.h">
+      <Filter>游戏\系统\装备合成</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierAI.h">
+      <Filter>游戏\模型\角色</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiManager.h">
+      <Filter>游戏\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManager.h">
+      <Filter>游戏\登陆注册</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderEngine.h">
+      <Filter>游戏引擎\双缓冲渲染器</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleBufferUtils.h">
+      <Filter>游戏引擎\双缓冲渲染器\控制台缓冲控制</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -271,9 +320,6 @@
     <ClCompile Include="CustomUtils.cpp">
       <Filter>游戏引擎\模型\头文件\工具类</Filter>
     </ClCompile>
-    <ClCompile Include="RenderEngine.cpp">
-      <Filter>游戏引擎\通用模块\源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SimplePhysicsEngine.cpp">
       <Filter>游戏引擎\通用模块\源文件</Filter>
     </ClCompile>
@@ -328,6 +374,39 @@
     <ClCompile Include="ItemManager.cpp">
       <Filter>游戏\模型\道具</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>游戏\模型\角色</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerManager.cpp">
+      <Filter>游戏引擎\通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameAIUtils.cpp">
+      <Filter>游戏引擎\通用模块\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FightSystem.cpp">
+      <Filter>游戏\系统\战斗</Filter>
+    </ClCompile>
+    <ClCompile Include="Bag.cpp">
+      <Filter>游戏\系统\背包</Filter>
+    </ClCompile>
+    <ClCompile Include="AssembleSystem.cpp">
+      <Filter>游戏\系统\装备合成</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierAI.cpp">
+      <Filter>游戏\模型\角色</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiManager.cpp">
+      <Filter>游戏\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManager.cpp">
+      <Filter>游戏\登陆注册</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderEngine.cpp">
+      <Filter>游戏引擎\双缓冲渲染器</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleBufferUtils.cpp">
+      <Filter>游戏引擎\双缓冲渲染器\控制台缓冲控制</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="event.txt">
@@ -336,5 +415,6 @@
     <Text Include="..\脚本.txt">
       <Filter>游戏</Filter>
     </Text>
+    <Text Include="map2.txt" />
   </ItemGroup>
 </Project>

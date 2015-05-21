@@ -1,5 +1,6 @@
 #include "LimitedState.h"
 
+
 LimitedState::LimitedState()
 {
 	CurrentState = 0;

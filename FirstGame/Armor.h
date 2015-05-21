@@ -1,13 +1,17 @@
 #ifndef __ARMOR__
 #define __ARMOR__
-#include "Item.h"
+#include "Equipment.h"
 
-class Armor: public Item{
+
+class Armor: public Equipment{
 public:
-	Armor(string name, int price, int durable, int defence);
+	CREATE_FUNC(Armor);
+	bool init(){ return true; };
+
+	Armor() :Equipment(Node_Armor){ _defence = 0; };
+	Armor(string name, int tag, int defence);
 	inline int getDefence() const { return _defence; }
 	inline void setDefence(int val) { _defence = val; }
-	static Armor getArmor(int tag);
 private:
 	int _defence;
 };

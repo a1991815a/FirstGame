@@ -9,7 +9,7 @@ Scene::Scene()
 
 Scene::~Scene()
 {
-	if (final_data != nullptr)
+	if (final_data && _map)
 	{
 		for (int row = 0; row < _map->getHeight(); row++)
 		{

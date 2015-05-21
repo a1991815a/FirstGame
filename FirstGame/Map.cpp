@@ -51,9 +51,9 @@ void Map::visit( Vec2 vec )
 {
 	Vec2 pos = _customUtils->getCameraPos(this, CUT_WIDTH, CUT_HEIGHT);
 
-	for (int row = pos.y; row < pos.y + CUT_HEIGHT - 1; row++)
+	for (int row = pos.y; row < min(pos.y + CUT_HEIGHT - 1, pos.y + height - 1); row++)
 	{
-		for (int col = pos.x; col < pos.x + CUT_WIDTH - 1; col++)
+		for (int col = pos.x; col <min(pos.x + CUT_WIDTH - 1, pos.x + width - 1); col++)
 		{
 			_renderEngine->addRenderData(map_data[row][col], Vec2(pos.x + col, pos.y + row));
 		}

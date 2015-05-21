@@ -1,12 +1,14 @@
 #include "Control.h"
+#include "stdafx.h"
 #include <conio.h>
 #include "DispathMessage.h"
 #include "Message.h"
 #include "header.h"
 #include "Value.h"
 #include "Director.h"
-#include "stdafx.h"
 #include "CALLBACK_1.h"
+#include "Player.h"
+#include "SimplePhysicsEngine.h"
 
 Control* Control::_instance = nullptr;
 
@@ -28,6 +30,14 @@ void Control::getCh()
 {
 	char _char = _getch();
 	_dispathMessage->sendMsg(Message(MSG_OPERATE_KEY, nullptr, Value(_char)));
+}
+
+void Control::listenKeyboard()
+{
+	if (_kbhit())
+	{
+		getCh();
+	}
 }
 
 bool Control::callback_1(Message msg)
@@ -66,6 +76,7 @@ bool Control::callback_1(Message msg)
 	default:
 		break;
 	}
+	_director->refreshScreen();
 
 	return true;
 }
@@ -101,7 +112,7 @@ bool Control::controlMove( Message msg )
 	default:
 		break;
 	}
-
+	_simplePhysicsEngine->check(node); 
 	return true;
 }
 

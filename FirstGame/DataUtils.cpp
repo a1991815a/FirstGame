@@ -62,7 +62,7 @@ vector<string> DataUtils::splitString(string& in_data, char split_char, int& ind
 			left_index = i + 1;
 		}
 	}
-	vs.push_back(in_data.substr(left_index, in_data.size - left_index));
+	vs.push_back(in_data.substr(left_index, in_data.size() - left_index));
 
 	index = in_data.size() - 1;
 

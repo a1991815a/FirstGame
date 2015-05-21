@@ -13,6 +13,9 @@ private:
 	static GameManager* _instance;
 
 public:
+	void processControl();
+
+public:
 	Player* getPlayer();
 };
 #endif

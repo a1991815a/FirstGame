@@ -6,7 +6,7 @@ class Door: public Area{
 public:
 	Door(int tag, Vec2 pos);
 	
-	virtual void trigger() override;
+//	virtual void trigger() override;
 
 	inline int getNext_map_tag() const { return next_map_tag; }
 	inline void setNext_map_tag(int val) { next_map_tag = val; }

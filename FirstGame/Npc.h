@@ -1,16 +1,18 @@
 #ifndef __NPC__
 #define __NPC__
 #include "stdafx.h"
-#include "Sprite.h"
 #include "Script.h"
+#include "Actor.h"
 
-class Npc: public Sprite{
+class Npc: public Actor{
 public:
 	CREATE_FUNC(Npc);
 	bool init();
-	void trigger();
+	int getType()const override{ return Node_Npc; };
 
-private:
-	vector<Script> _script_list;
+//	void trigger();
+
+// private:
+// 	vector<Script> _script_list;
 };
 #endif
