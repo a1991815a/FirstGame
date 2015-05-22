@@ -81,11 +81,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="map.txt" />
+    <None Include="map3.txt" />
     <None Include="ReadMe.txt" />
     <None Include="User.inf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="AiManager.h" />
     <ClInclude Include="Area.h" />
     <ClInclude Include="Armor.h" />
     <ClInclude Include="AssembleSystem.h" />
@@ -142,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="AiManager.cpp" />
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="AssembleSystem.cpp" />

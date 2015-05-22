@@ -29,7 +29,7 @@ FightSystem::FightSystem()
 {
 	freeAct_time = 5 * 60 * 1000;
 	cur_state = 0;
-	cur_NO = 1;
+/*	cur_NO = 1;*/
 }
 
 void FightSystem::attack(Actor* attacker, Actor* defencer)
@@ -51,7 +51,7 @@ void FightSystem::freeActStart()
 		MSG_FREEACT_START,
 		nullptr
 		));
-	clearEnemy();
+/*	clearEnemy();*/
 	_gameLimitState->transState(GAME_STATE_NORMAL);
 	GameNormal();
 }
@@ -67,7 +67,7 @@ void FightSystem::defenceStart()
 	for (int i = 0; i < ENEMY_NUM; i++)
 	{
 		Enemy* enemy = Enemy::create();
-		*enemy = atk_enemys.at(cur_NO - 1);
+/*		*enemy = atk_enemys.at(cur_NO - 1);*/
 		_soldierAI->setAi(enemy);
 	}
 
@@ -83,36 +83,6 @@ void FightSystem::timingDt()
 	cur_dt += _timerManager->getDelta();
 }
 
-void FightSystem::addEnemy(int NO, Enemy enemy)
-{
-	atk_enemys.insert(atk_enemys.begin() + NO - 1,enemy);
-}
-
-void FightSystem::createEnemys()
-{
-	Enemy enemy = atk_enemys.at(cur_NO);
-	for (int i = 0; i < ENEMY_NUM; i++)
-	{
-		Enemy* e_obj = Enemy::create();
-		*e_obj = enemy;
-		e_obj->retain();
-		pushEnemy(e_obj);
-	}
-
-
-}
-
-void FightSystem::clearEnemy()
-{
-	for (int i = 0; i < cur_enemys.size(); i++)
-	{
-		Enemy*& enemy = cur_enemys.at(i);
-		enemy->release();
-	}
-	cur_enemys.clear();
-	_soldierAI->clear();
-}
-
 bool FightSystem::checkAttack(Node* n1, Node* n2)
 {
 	Actor* attacker = dynamic_cast<Actor*>(n1);
@@ -122,3 +92,18 @@ bool FightSystem::checkAttack(Node* n1, Node* n2)
 	attack(attacker, defencer);
 	return true;
 }
+
+vector<int> FightSystem::getCamps()
+{
+	vector<int> camps;
+	
+	map<int, vector<Actor*>>::const_iterator itor = fight_actors.begin();
+	while (itor != fight_actors.end())
+	{
+		camps.push_back(itor->first);
+		itor++;
+	}
+	return camps;
+}
+
+

@@ -34,10 +34,14 @@ public:
 	inline void resetDt(){ _dt = 0; };
 	inline void refreshScreen(){ _dt = render_dt + 1; };
 
-	inline void setFrames(int frame){ render_dt = 1000 / frame; };
+	inline void setRefreshFrames(int frame){ render_dt = 1000 / frame; };
+
+	inline void refreshFrames(){ _frames++; };
+	inline unsigned long long getCurrentFrames(){ return _frames; };
 private:
 	Scene* CurrentScene;
 	long _dt;
 	long render_dt;
+	unsigned long long _frames;
 };
 #endif

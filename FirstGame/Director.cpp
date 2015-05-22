@@ -14,9 +14,9 @@ extern void GameMain();
 Director* Director::_instance = nullptr;
 
 Director::Director()
+	:_dt(0),_frames(0)
 {
 	CurrentScene = nullptr;
-	_dt = 0;
 }
 
 Director* Director::getInstance()
@@ -44,7 +44,7 @@ void Director::mainloop()
 			renderAll();
 		}
 			break;
-
+			
 		case GAME_STATE_DEFENCE:
 		{
 			_renderEngine->clear();
@@ -70,12 +70,13 @@ void Director::mainloop()
 		}
 		_memoryManager->getCurrentPool()->clear();
 		_timerManager->resetTime();
+		refreshFrames();
 	}
 }
 
 void Director::initAll()
 {
-	setFrames(60);
+	setRefreshFrames(30);
 	_timerManager;
 	GameMain();
 }

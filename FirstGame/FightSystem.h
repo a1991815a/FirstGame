@@ -31,20 +31,12 @@ private:
 	long freeAct_time;
 
 public:
-	void addEnemy(int NO, Enemy enemy);
-	
-	void createEnemys();
-	
-	inline void pushEnemy(Enemy* enemy){ cur_enemys.push_back(enemy); };
-	void clearEnemy();
+	inline vector<Actor*> getActorByCamp(int camp){return fight_actors.at(camp);};
 
-	inline int getCur_NO() const { return cur_NO; }
-	inline void setCur_NO(int val) { cur_NO = val; }
+	vector<int> getCamps();
 
 private:
-	int cur_NO;
-	vector<Enemy> atk_enemys;
-	vector<Enemy*> cur_enemys;
+	map<int, vector<Actor*>> fight_actors;
 
 private:
 	bool checkAttack(Node* n1, Node* n2);

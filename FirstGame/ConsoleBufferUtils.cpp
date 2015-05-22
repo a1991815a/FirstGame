@@ -8,6 +8,7 @@ ConsoleBufferUtils* ConsoleBufferUtils::getInstance()
 	if (_instance == nullptr)
 	{
 		_instance = new ConsoleBufferUtils();
+		_instance->init();
 	}
 	return _instance;
 }
@@ -45,7 +46,10 @@ void ConsoleBufferUtils::init()
 	SetConsoleScreenBufferSize(_display, dwSize);
 	SetConsoleScreenBufferSize(_surface, dwSize);
 
+	
+
 	GetConsoleScreenBufferInfo(_display, &_info);
+	
 }
 
 void ConsoleBufferUtils::swap()
@@ -76,8 +80,12 @@ void ConsoleBufferUtils::printf(const char* format, ...)
 }
 
 void ConsoleBufferUtils::renderAll()
-{ 
-	WriteConsole(_display, _out->c_str(), _out->size(), &_out_len, NULL);
+{
+	COORD coord = { 0, 0 };
+	WriteConsole(_surface, _out->c_str(), _out->size(), &_out_len, NULL);
+	SMALL_RECT rect;
+	CHAR_INFO cInfo;
+	ScrollConsoleScreenBuffer(_surface, &rect, &rect, coord, &cInfo);
 	swap();
 	cls(_surface);
 }

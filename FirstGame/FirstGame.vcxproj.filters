@@ -94,11 +94,15 @@
     <Filter Include="游戏引擎\双缓冲渲染器\控制台缓冲控制">
       <UniqueIdentifier>{f49c67a4-2ab8-4826-8da3-8990ea927c49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="游戏引擎\人工智能">
+      <UniqueIdentifier>{43ea38f4-4a32-4daa-bfd1-c34b761f8c63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
     <None Include="map.txt" />
     <None Include="User.inf" />
+    <None Include="map3.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -261,6 +265,9 @@
     <ClInclude Include="ConsoleBufferUtils.h">
       <Filter>游戏引擎\双缓冲渲染器\控制台缓冲控制</Filter>
     </ClInclude>
+    <ClInclude Include="AiManager.h">
+      <Filter>游戏引擎\人工智能</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -406,6 +413,9 @@
     </ClCompile>
     <ClCompile Include="ConsoleBufferUtils.cpp">
       <Filter>游戏引擎\双缓冲渲染器\控制台缓冲控制</Filter>
+    </ClCompile>
+    <ClCompile Include="AiManager.cpp">
+      <Filter>游戏引擎\人工智能</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

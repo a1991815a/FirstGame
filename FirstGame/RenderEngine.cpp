@@ -3,6 +3,7 @@
 #include "Director.h"
 #include "CustomUtils.h"
 #include <stdarg.h>
+#include "ConsoleBufferUtils.h"
 
 RenderEngine* RenderEngine::_instance = nullptr;
 
@@ -26,27 +27,24 @@ RenderEngine* RenderEngine::getInstance()
 
 void RenderEngine::RenderAll()
 {
-	system("cls");
-	for (int row=0; row < MAX_HEIGHT; row++)
-	{	
-		if(display_data[row][0] == -51 || display_data[row][0] == 0)
-			continue;
-		cout << display_data[row];
-		renderSideText(row);
-		cout << endl;
-	}
-	renderSubText();
+	_consoleBufferUtils->renderAll();
 }
 
 void RenderEngine::readyBuf()
 {
 	if (_director->getCurrentScene() == nullptr)
-	{
 		throw "没有可加载的场景！";
-	}
+
 	_director->getCurrentScene()->assembleFragment();
 	assembleFragment();
-	cutBuf();
+	assembleSideText();
+	assembleSubText();
+	for (int row = 0; row < MAX_HEIGHT; row++)
+	{
+		out_text += display_data[row];
+		out_text.erase(out_text.size() - 1);
+		out_text += '\n';
+	}
 }
 
 void RenderEngine::clear()
@@ -54,10 +52,6 @@ void RenderEngine::clear()
 	for (int row = 0; row < MAX_HEIGHT; row++)
 	{
 		memset(display_data[row], '\0', MAX_WIDTH + 1);
-		for (int col = 0; col < MAX_WIDTH + 1; col++)
-		{
-			display_data[row][col] = '\0';
-		}
 	}
 }
 
@@ -77,47 +71,44 @@ void RenderEngine::assembleFragment()
 			));
 	}
 	_command_list.clear();
-	
-
-
 }
 
 void RenderEngine::assembleSubText()
 {
-	for (int row = 0; row < MAX_HEIGHT; row++)
+	for (int row = SUB_TEXT_POS_Y; row < MAX_HEIGHT; row++)
 	{
-		
+		int row_index = (row - SUB_TEXT_POS_Y)* MAX_WIDTH;
+
+		for (int col = 0; col < MAX_WIDTH; col++)
+		{
+			if (row_index + col >= sub_text.size())
+				break;
+			display_data[row][col] = sub_text.at(row_index + col);
+		}
 	}
 	
 }
 
 void RenderEngine::assembleSideText()
 {
-
-}
-
-void RenderEngine::cutBuf()
-{
-	for (int row=CUT_HEIGHT+1; row < MAX_HEIGHT; row++)
+	for (int row = 0; row < MAX_HEIGHT; row++)
 	{
-		for (int col=0; col < MAX_WIDTH; col++)
+		for (int col = CUT_WIDTH - 1; col < SIDE_TEXT_POS_X; col++)
 		{
-			display_data[row][col] = '\0';
+			display_data[row][col] = ' ';
+		}
+		for (int col = SIDE_TEXT_POS_X; col < MAX_WIDTH; col++)
+		{
+			if (col - SIDE_TEXT_POS_X >= side_text[row].size())
+				break;
+			display_data[row][col] = side_text[row].at(col - SIDE_TEXT_POS_X);
 		}
 	}
-
-	for (int col=CUT_WIDTH; col < MAX_WIDTH; col++)
-	{
-		for (int row=0; row < CUT_HEIGHT + 1; row++)
-		{
-			display_data[row][col] = '\0';
-		}
-	}
-
 }
 
 void RenderEngine::setSubText( string format, ... )
 {
+	clearSubTextBuf();
 	va_list ap;
 	va_start(ap,format);
 	char out_text[1024] = {0};
@@ -129,47 +120,24 @@ void RenderEngine::setSubText( string format, ... )
 
 void RenderEngine::setSideText(int row, string format, ... )
 {
+	clearSideTextBuf();
 	va_list ap;
 	va_start(ap,format);
-	char out_text[1024];
+	char out_text[1024] = {0};
 	vsprintf_s(out_text, 1024, format.c_str(), ap);
 	va_end(ap);
 	side_text[row] += out_text;
 }
 
-void RenderEngine::renderSubText()
-{
-	int i = 0;
-	while(true)
-	{
-		const int offset = i*SUB_TEXT_SIZE_WIDTH;
-		char show_text[SUB_TEXT_SIZE_WIDTH + 1]={0};
-		if(offset >= sub_text.size())
-			break;
-		sub_text.copy(show_text,SUB_TEXT_SIZE_WIDTH,offset);
-		if(show_text[0] == '\0')
-			break;
-		cout << show_text << endl;
-		i++;
-	}
-
-}
-
-void RenderEngine::renderSideText(int row)
-{
-	if (row >= MAX_HEIGHT)
-	{
-		return;
-	}
-	cout << "　　*" << side_text[row].c_str();
-}
-
 void RenderEngine::clearSubTextBuf()
 {
-
+	sub_text.clear();
 }
 
 void RenderEngine::clearSideTextBuf()
 {
-
+	for (int row = 0; row < MAX_HEIGHT; row++)
+	{
+		side_text[row].clear();
+	}
 }

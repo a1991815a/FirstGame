@@ -41,9 +41,6 @@ public:
 	void setSubText(string format, ...);
 	void setSideText(int row, string format, ...);
 
-	void renderSubText();
-	void renderSideText(int row = 0);
-
 	void clearSubTextBuf();
 	void clearSideTextBuf();
 

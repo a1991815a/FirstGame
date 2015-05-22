@@ -2,11 +2,15 @@
 #define __CONSOLEBUFFERUTILS__
 #include "stdafx.h"
 
+#define _consoleBufferUtils ConsoleBufferUtils::getInstance()
+
 class ConsoleBufferUtils{
 public:
 	static ConsoleBufferUtils* getInstance();
 private:
 	static ConsoleBufferUtils* _instance;
+	ConsoleBufferUtils():max_size(MAX_WIDTH*MAX_HEIGHT){};
+
 public:
 	void renderAll();
 
@@ -28,6 +32,6 @@ private:
 	string* _out;
 	DWORD _out_len;
 	CONSOLE_SCREEN_BUFFER_INFO _info;
-	const DWORD max_size = MAX_WIDTH*MAX_HEIGHT;
+	const DWORD max_size;
 };
 #endif

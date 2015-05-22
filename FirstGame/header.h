@@ -177,4 +177,12 @@ enum MoveObj{
 #define Node_Weapon					0x0013
 #define Node_Armor					0x0014
 
+/*
+	Ai¶ÔÏó×´Ì¬
+*/
+#define AI_STATE_NORMAL				0x0001
+
+
+#define SEARCH_RANGE_MOD			8
+
 #endif

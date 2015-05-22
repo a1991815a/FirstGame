@@ -44,7 +44,7 @@ void GameMain(){
 
 	scene->addChild(map);
 	Player* player = Player::create();
-	player->setName("我");
+	player->setName("玩家1");
 	player->setTexture("△");
 	player->setPos(1,13);
 	player->setAttack(30);
